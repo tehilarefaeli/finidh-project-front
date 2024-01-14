@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BasicButton from '../basic/BasicButton';
-import BasicInput from '../basic/BasicInput'
+import { HomeOutlined ,UserOutlined, LineOutlined} from '@ant-design/icons';
+import'./Headers.css'
 
 
 function Headers() {
@@ -12,32 +13,54 @@ const handleClick =()=>{
 const handleChange = (e)=>{
   console.log(e.target.value);
 }
-
-
   return (
-    <div>
+    <div className='divRoot'>
+     <div className='profile' >
+     <Link to="/profile"> 
+      <UserOutlined className='profileIcon'  />
+      </Link>
+      </div>
+
+      <div className='home'>
+      <Link to="/">
+      <HomeOutlined className='homeIcon' />
+      </Link>
+     </div>
+      
+     <div className='linkes'>
+      <Link to="/about">
       <BasicButton 
-      isDanger
       size='large'
-      text='I am Large'
+      text='About'
       onClick={handleClick}
       />
-      <BasicButton
-      isDisabled
-      size='small'
-      text='Im small'
+      </Link>
+      <LineOutlined rotate={90}/>
+      <Link to="/cakes">
+      <BasicButton 
+      size='large'
+      text='Cakes'
+      onClick={handleClick}
       />
-      <BasicButton
-      text='no atribute'
+      </Link>
+      <LineOutlined rotate={90}/>
+      <Link to="/cookies">
+      <BasicButton 
+      size='large'
+      text='Cookies'
+      onClick={handleClick}
       />
-<br/>
-      <BasicInput onChange={handleChange} type='number' size='small ' className='auto-width'/>
-      <BasicInput  size='small 'className='content-width'maxLength={50} />
-      <BasicInput  size='small ' className='present-25'isDisabled />
+      </Link>
+      <LineOutlined rotate={90}/>
+      <Link to="/deserts">
+      <BasicButton 
+      size='large'
+      text='Deserts'
+      onClick={handleClick}
+      />
+      </Link>
+     </div>
 
-
-
-     
     </div>
   
   );
