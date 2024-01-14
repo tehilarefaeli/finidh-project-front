@@ -25,7 +25,7 @@ const Signup = () => {
             <div className="login-container">
                 <form id="user-form">
                     <div className="label-input-container">
-                        <label htmlFor="email">דואר אלקטרוני</label>
+                        <label htmlFor="email">דואר אלק:טרוני</label>
                         <Input
                             type="email"
                             id="email"

@@ -46,7 +46,7 @@ const Login = () => {
                     </div>
                     <br></br>
                 </form>
-                <p className="registration-link"> עדיין לא רשום? <a href="http://localhost:3000/">לחץ כאן להרשמה</a></p>
+                <p className="registration-link"> עדיין לא רשום? <a href="http://localhost:3000/">לחץ כאן: להרשמה</a></p>
             </div>
         </div>
     );
