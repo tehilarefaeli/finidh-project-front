@@ -54,7 +54,7 @@ const Signup = () => {
                             id="nickname"
                             name="nickname"
                             value={nickname}
-                            onChange={(e) => setnickname(e.target.value)}
+                            onChange={(e) => setNickname(e.target.value)}
                             required
                         />
                     </div>
@@ -65,7 +65,7 @@ const Signup = () => {
                             id="age"
                             name="age"
                             value={age}
-                            onChange={(e) => setage(e.target.value)}
+                            onChange={(e) => setAge(e.target.value)}
                             required
                         />
                     </div>

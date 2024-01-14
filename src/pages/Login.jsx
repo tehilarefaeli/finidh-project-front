@@ -16,25 +16,23 @@ const Login = () => {
                 <form id="user-form">
                     <div className="label-input-container">
                         <label htmlFor="username">דואר אלקטרוני:</label>
-                        <input
+                        <Input
                             type="text"
                             id="username"
                             name="username"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="input-field"
                             required
                         />
                     </div>
                     <div className="label-input-container">
                         <label htmlFor="password">סיסמא:</label>
-                        <input
+                        <Input
                             type="password"
                             id="password"
                             name="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="input-field"
                             required
                         />
                     </div>
