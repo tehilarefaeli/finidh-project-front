@@ -7,11 +7,15 @@ import Cookies from './pages/Cookies';
 import Profile from './pages/Profile';
 import Cakes from './pages/Cakes';
 import Deserts from './pages/Deserts';
+import Headers from './components/common/Headers';
+
 
 
 function App() {
   return (
+    
     <BrowserRouter>
+    <Headers />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />

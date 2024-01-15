@@ -8,7 +8,7 @@ const { Content } = Layout;
 function MainLayout({ children }) {
   return (
     <Layout>
-      <Headers />
+      
       {/* <Content className='min-h-[75vh]'>{ children }</Content> */}
       {/* <Footers /> */}
     </Layout>

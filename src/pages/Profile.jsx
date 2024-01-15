@@ -1,11 +1,14 @@
 import React from 'react';
+import SimpleCard from '../components/basic/card';
 
 function Profile() {
 
   return (
-    <div>
-      i am profile!
-    </div>
+    <SimpleCard
+    title="Profile"
+    data='Im profile'
+    size='small'
+    />
   );
 }
 
