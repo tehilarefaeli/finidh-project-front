@@ -1,31 +1,26 @@
-// Login.jsx
 import React, { useState } from 'react';
-import { Button, Input } from 'antd'; 
+import { Button, Input } from 'antd';
+import './Signup.css';
 
-const Signup = () => {
+function Signup  ()  {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [nickname, setNickname] = useState('');
     const [age, setAge] = useState('');
 
-    const handleLogin = () => {
-        // לטובת הדוגמה, אפשר להדפיס את הנתונים לקונסולה
-        console.log(`המשתמש התחבר עם דוא"ל: ${email} וסיסמא: ${password}`);
-    };
-
     const handleRegistration = () => {
-        // לטובת הדוגמה, אפשר להדפיס את הנתונים לקונסולה
-        console.log(`נרשמת עם שם משתמש: ${username}, סיסמא: ${password}, שם כינוי: ${nickname}, גיל: ${age},`);
+        console.log(`נרשמת עם שם משתמש: ${username}, סיסמא: ${password}, שם כינוי: ${nickname}, גיל: ${age}`);
     };
 
     return (
         <div className="user-container">
-            <h1>הרשמה לאתר</h1>
+            <h1 className="welcome-header">מלא את הפרטים לצורך הרשמה</h1>
+            <br></br>
             <div className="login-container">
                 <form id="user-form">
                     <div className="label-input-container">
-                        <label htmlFor="email">דואר אלק:טרוני</label>
+                        <label htmlFor="email">דואר אלקטרוני</label>
                         <Input
                             type="email"
                             id="email"
@@ -35,9 +30,9 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    
+
                     <div className="label-input-container">
-                        <label htmlFor="password">סיסמא</label>
+                        <label htmlFor="password">סיסמה</label>
                         <Input
                             type="password"
                             id="password"
@@ -48,9 +43,9 @@ const Signup = () => {
                         />
                     </div>
                     <div className="label-input-container">
-                        <label htmlFor="nickname">הכינוי שלי באתר</label>
+                        <label htmlFor="nickname">שם כינוי</label>
                         <Input
-                            type="nickname"
+                            type="text"
                             id="nickname"
                             name="nickname"
                             value={nickname}
@@ -61,7 +56,7 @@ const Signup = () => {
                     <div className="label-input-container">
                         <label htmlFor="age">גיל</label>
                         <Input
-                            type="age"
+                            type="number"
                             id="age"
                             name="age"
                             value={age}
@@ -69,15 +64,14 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    
+                    <br></br>
+
                     <div className="button-container">
-                        <Button type="button" onClick={handleLogin}>
+                        <Button type="button" onClick={handleRegistration}>
                             צור משתמש
                         </Button>
-                        
                     </div>
                 </form>
-                <br></br>
             </div>
         </div>
     );
