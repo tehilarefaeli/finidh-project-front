@@ -4,6 +4,7 @@ import Footers from '../common/Footers';
 import Headers from '../common/Headers';
 import Homepage from '../../pages/homePage';
 
+
 const { Content } = Layout;
 
 function MainLayout({ children }) {

@@ -1,20 +1,19 @@
-// Login.jsx
+
 import React, { useState } from 'react';
-import { Button, Input } from 'antd'; 
-const Login = () => {
+import { Button, Input } from 'antd';
+import './Login.css'; 
+
+function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const login = () => {
-       // console.log(`המשתמש התחבר עם דוא"ל: ${email} וסיסמא: ${password}`);
-    };
-
     return (
         <div className="user-container">
-            <h1>ברוך שובך! אנא התחבר על מנת להינות ממתכוני האתר</h1>
+            <h1 className="welcome-header">ברוך שובך! אנא התחבר על מנת להינות ממתכוני האתר</h1>
+            <br></br>
             <div className="login-container">
                 <form id="user-form">
-                    <div className="label-input-container">
+                    <div className="input-container">
                         <label htmlFor="username">דואר אלקטרוני:</label>
                         <Input
                             type="text"
@@ -25,7 +24,7 @@ const Login = () => {
                             required
                         />
                     </div>
-                    <div className="label-input-container">
+                    <div className="input-container password-input">
                         <label htmlFor="password">סיסמא:</label>
                         <Input
                             type="password"
@@ -36,20 +35,19 @@ const Login = () => {
                             required
                         />
                     </div>
-                    
-                    <div className="label-input-container">
-                        <Button> כניסה</Button>
-                    </div>
-                    <br></br>
-                    <div className="label-input-container">
+
+                    <div className="button-container">
+                        <Button>התחבר</Button>
                         <Button>כניסת אורח</Button>
                     </div>
-                    <br></br>
                 </form>
-                <p className="registration-link"> עדיין לא רשום? <a href="http://localhost:3000/">לחץ כאן: להרשמה</a></p>
+                <p className="registration-link">
+                    <span className="registration-text">עדיין לא רשום? </span>
+                    <a href="http://localhost:3000/" className="registration-link">לחץ כאן להרשמה</a>
+                </p>
             </div>
         </div>
     );
-};
+}
 
 export default Login;
