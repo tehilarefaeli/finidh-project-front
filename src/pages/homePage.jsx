@@ -7,7 +7,7 @@ function Homepage() {
   return (
     <div
       style={{
-        backgroundImage: "url('https://www.tropri.co.il/media/big/8-%D7%99%D7%97-%D7%9E%D7%A7%D7%A8%D7%95%D7%9F-%D7%91%D7%98%D7%A2%D7%9E%D7%99%D7%9D.jpg')",
+        backgroundImage: "url('https://foodislife.co.il/wp-content/uploads/2023/05/pistachio-macaroons-dessert-white-background-top-view.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
