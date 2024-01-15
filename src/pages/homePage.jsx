@@ -38,7 +38,7 @@ function Homepage() {
         {/* External link example */}
         <Link to="/Noingredints">
           <Button type="button" style={{ width: "auto" }}>
-            Searching for a recipe that does not contain certain ingredients
+            Searching for a recipe that does not contain certain ingredientss
           </Button>
         </Link>
       </div>
