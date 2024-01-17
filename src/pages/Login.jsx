@@ -9,12 +9,12 @@ function Login() {
 
     return (
         <div className="user-container">
-            <h1 className="welcome-header">ברוך שובך! אנא התחבר על מנת להינות ממתכוני האתר</h1>
+            <h1 className="welcome-header">Welcome back, you should register to enjoy the site's recipes</h1>
             <br></br>
             <div className="login-container">
                 <form id="user-form">
                     <div className="input-container">
-                        <label htmlFor="username">דואר אלקטרוני:</label>
+                        <label htmlFor="username"> Email</label>
                         <Input
                             type="text"
                             id="username"
@@ -25,7 +25,7 @@ function Login() {
                         />
                     </div>
                     <div className="input-container password-input">
-                        <label htmlFor="password">סיסמא:</label>
+                        <label htmlFor="password">Password</label>
                         <Input
                             type="password"
                             id="password"
@@ -37,13 +37,13 @@ function Login() {
                     </div>
 
                     <div className="button-container">
-                        <Button>התחבר</Button>
-                        <Button>כניסת אורח</Button>
+                        <Button>Login</Button>
+                        <Button>Guest </Button>
                     </div>
                 </form>
                 <p className="registration-link">
-                    <span className="registration-text">עדיין לא רשום? </span>
-                    <a href="http://localhost:3000/" className="registration-link">לחץ כאן להרשמה</a>
+                    <span className="registration-text">  Not registered yet? </span>
+                    <a href="http://localhost:3000/" className="registration-link">Click here to register  </a>
                 </p>
             </div>
         </div>

@@ -15,12 +15,12 @@ function Signup  ()  {
 
     return (
         <div className="user-container">
-            <h1 className="welcome-header">מלא את הפרטים לצורך הרשמה</h1>
+            <h1 className="welcome-header">Enter the details for registration</h1>
             <br></br>
             <div className="login-container">
                 <form id="user-form">
                     <div className="label-input-container">
-                        <label htmlFor="email">דואר אלקטרוני</label>
+                        <label htmlFor="email">Email </label>
                         <Input
                             type="email"
                             id="email"
@@ -32,7 +32,7 @@ function Signup  ()  {
                     </div>
 
                     <div className="label-input-container">
-                        <label htmlFor="password">סיסמה</label>
+                        <label htmlFor="password">Password</label>
                         <Input
                             type="password"
                             id="password"
@@ -43,7 +43,7 @@ function Signup  ()  {
                         />
                     </div>
                     <div className="label-input-container">
-                        <label htmlFor="nickname">שם כינוי</label>
+                        <label htmlFor="nickname">Nickname </label>
                         <Input
                             type="text"
                             id="nickname"
@@ -54,7 +54,7 @@ function Signup  ()  {
                         />
                     </div>
                     <div className="label-input-container">
-                        <label htmlFor="age">גיל</label>
+                        <label htmlFor="age">Age</label>
                         <Input
                             type="number"
                             id="age"
@@ -68,7 +68,7 @@ function Signup  ()  {
 
                     <div className="button-container">
                         <Button type="button" onClick={handleRegistration}>
-                            צור משתמש
+                            Create a user 
                         </Button>
                     </div>
                 </form>

@@ -11,6 +11,7 @@ import Headers from './components/common/Headers';
 import Wantingred from './pages/Wantingredients';
 import All from './pages/Allrecipes';
 import Noingred from './pages/Noingredients';
+import Login from './pages/Login';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/Wantingredints' element={<Wantingred />} />
         <Route path='/Noingredints' element={<Noingred />} />
         <Route path='/all' element={<All />} />
+        <Route path='/Login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
      
       </Routes>

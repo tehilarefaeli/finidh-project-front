@@ -42,6 +42,14 @@ function Homepage() {
             Searching for a recipe that does not contain certain ingredients
           </Button>
         </Link>
+        <br></br>
+        <Link to="/Login">
+          <Button type="button" style={{ width: "auto" }}>
+            Login
+          </Button>
+          <br></br>
+          <Button>Guest </Button>
+        </Link>
       </div>
     </div>
   );
