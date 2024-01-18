@@ -14,10 +14,16 @@ import Noingred from './pages/Noingredients';
 import Login from './pages/Login';
 import Footers from './components/common/Footers';
 import Signup from './pages/signup';
+import axios from "axios";
 
 
 
 function App() {
+
+const getFromBackEnd = async () => {
+  const response = await axios.get("http://localhost:3000");
+  return response.data;
+};
   return (
     
     <BrowserRouter>
@@ -38,7 +44,9 @@ function App() {
       </Routes>
       <Footers/>
     </BrowserRouter>
+
   );
+
 }
 
 export default App;

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Button, Input } from 'antd';
 import './Login.css'; 
+import axios from 'axios';
+
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -37,7 +39,7 @@ function Login() {
                     </div>
 
                     <div className="button-container">
-                        <Button>Login</Button>
+                    <Button onClick={handleLogin}>Login</Button>
                         <Button>Guest </Button>
                     </div> 
                 </form>
@@ -49,5 +51,59 @@ function Login() {
         </div>
     );
 }
+
+const handleLogin = async (e) => {
+    e.preventDefault(); // מניעת התנהגות ברירת המחדל של הטופס
+
+    try {
+        const response = await axios.post('/api/login', {
+            email,
+            password
+
+        });
+
+        
+
+        // טיפול בתגובת שרת מוצלחת (למשל, שמירת נתוני משתמש וניהול מעבר לרכיב האזור האישי)
+        console.log(response.data);
+    } catch (error) {
+        // טיפול בשגיאות בקשת ההתחברות
+        console.error(error);
+    }
+
+    const handleLogin = async (e) => {
+        e.preventDefault(); // מניעת התנהגות ברירת המחדל של הטופס
+    
+        try {
+            const response = await axios.post('/api/login', {
+                email,
+                password
+            });
+    
+            if (response.status === 200) {
+                // ההתחברות הצליחה
+    
+                // שמירת נתוני המשתמש
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('userId', response.data.userId);
+    
+                // ניתוב המשתמש לאזור האישי
+                window.location.href = '/account';
+            } else {
+                // ההתחברות נכשלה
+    
+                // הצגת הודעה שגיאה
+                alert(response.data.message);
+            }
+        } catch (error) {
+            // טיפול בשגיאות בקשת ההתחברות
+            console.error(error);
+        }
+    };
+    
+};
+
+
+
 
 export default Login;
