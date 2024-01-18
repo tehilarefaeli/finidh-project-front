@@ -11,7 +11,7 @@ function MainLayout({ children }) {
   return (
     <Layout>
       <Homepage/>
-      <Footers/>
+     
       {/* <Content className='min-h-[75vh]'>{ children }</Content> */}
       {/* <Footers /> */}
     </Layout>

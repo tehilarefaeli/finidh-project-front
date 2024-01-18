@@ -29,7 +29,7 @@ function Footers() {
       </div>
 
       <div className='mb-4 md:mb-0'>
-        <Text className='md:text-center'>{` ${new Date().getFullYear()}  sweetime ©️כל הזכויות שמורות`}</Text>
+        <Text className='md:text-center'>{`All Rights Reserved©️ sweetime ${new Date().getFullYear()} `}</Text>
       </div>
     </Footer>
   );

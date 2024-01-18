@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 
-
 function Homepage() {
   return (
     <div
@@ -16,40 +15,63 @@ function Homepage() {
         justifyContent: "flex-start",
         alignItems: "center",
         padding: "20px",
-        color: "white",
+        color: "#FF69B4", // ייתכן שתרצה לשנות צבע הכתב לפי הדרישות שלך
         textAlign: "center",
       }}
     >
-      <h1 style={{ marginBottom: "20px", fontSize: "3rem", fontWeight: "bold" }}>SWEETIME</h1>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+        SWEETIME
+      </h1>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
-        {/* Link to 'all.jsx' page */}
+        {/* נותן סגנון יותר נקי ואטרקטיבי לכפתורים */}
+        <style>
+          {`
+            .recipeButton {
+              width: 300px;
+              height: 50px;
+              text-align: center;
+              font-size: 20px;
+              background-color: rgb(184,183,93);
+              color: white;
+              border: none;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+            .recipeButton:hover {
+              background-color: rgb(238,236,183);
+            .recipeButton:hover {
+             color: black;
+            }
+          `}
+        </style>
+
         <Link to="/all">
-          <Button type="button" style={{ width: "auto" }}>
-            for all the recipes on the site
+          <Button type="button" className="recipeButton">
+            Explore All Recipes
           </Button>
         </Link>
 
-        {/* External link example */}
         <Link to="/Wantingredints">
-          <Button type="button" style={{ width: "auto" }}>
-            Search recipes according to desired products
+          <Button type="button" className="recipeButton">
+            Search by Ingredients
           </Button>
         </Link>
 
-        {/* External link example */}
         <Link to="/Noingredints">
-          <Button type="button" style={{ width: "auto" }}>
-            Searching for a recipe that does not contain certain ingredients
+          <Button type="button" className="recipeButton">
+            Search Without Ingredients
           </Button>
         </Link>
-        <br></br>
+        <br /><br /><br />
         <Link to="/Login">
-          <Button type="button" style={{ width: "auto" }}>
+          <Button type="button" className="recipeButton">
             Login
           </Button>
-          <br></br>
-          <Button>Guest </Button>
         </Link>
+        
+        <Button type="button" className="recipeButton">
+          Guest
+        </Button>
       </div>
     </div>
   );

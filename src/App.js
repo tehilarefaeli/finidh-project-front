@@ -12,6 +12,8 @@ import Wantingred from './pages/Wantingredients';
 import All from './pages/Allrecipes';
 import Noingred from './pages/Noingredients';
 import Login from './pages/Login';
+import Footers from './components/common/Footers';
+import Signup from './pages/signup';
 
 
 
@@ -31,10 +33,10 @@ function App() {
         <Route path='/Noingredints' element={<Noingred />} />
         <Route path='/all' element={<All />} />
         <Route path='/Login' element={<Login />} />
+        <Route path='/signup' element={<Signup/>}/>
         <Route path='*' element={<NotFound />} />
-     
       </Routes>
-      // להוסיף פוטר
+      <Footers/>
     </BrowserRouter>
   );
 }

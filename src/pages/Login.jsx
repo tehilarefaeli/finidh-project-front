@@ -39,11 +39,11 @@ function Login() {
                     <div className="button-container">
                         <Button>Login</Button>
                         <Button>Guest </Button>
-                    </div>
+                    </div> 
                 </form>
                 <p className="registration-link">
                     <span className="registration-text">  Not registered yet? </span>
-                    <a href="http://localhost:3000/" className="registration-link">Click here to register  </a>
+                    <a href="http://localhost:3000/signup" className="registration-link">Click here to register  </a>
                 </p>
             </div>
         </div>
