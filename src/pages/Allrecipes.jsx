@@ -3,10 +3,10 @@ import GetRequest from "../helpers/getRequest";
 
 
 function AllRecipres() {
- // const recipes = GetRequest("recipies/all")
+ // const recipes = GetRequest("recipes/all")
  const [recipes,setrecipes] = useState();
   useEffect(()=>{
-  GetRequest("recipies/all").then(res => {
+  GetRequest("recipes/all").then(res => {
   console.log("useEffect", res);
   setrecipes(res)
 }
