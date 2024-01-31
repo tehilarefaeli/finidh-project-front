@@ -8,6 +8,7 @@ function Profile() {
     title="Profile"
     data='Im profile'
     size='small'
+    
     />
   );
 }
