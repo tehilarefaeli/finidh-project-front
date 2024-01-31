@@ -12,6 +12,10 @@
   }
   .homeIcon,.profileIcon{
     font-size: 60px;
+    color: #714618;
+  }
+  .homeIcon:hover,.profileIcon:hover{
+    color: rgb(184, 183, 93);
   }
 
   .divRoot{
@@ -26,6 +30,7 @@
     margin-left: 20%;
     margin-top: 30px;
     margin-bottom: 25px;
+    color: #714618;
   }
   
   

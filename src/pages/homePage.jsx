@@ -68,10 +68,11 @@ function Homepage() {
             Login
           </Button>
         </Link>
-        
+        <Link to="/Signup">
         <Button type="button" className="recipeButton">
-          Guest
+          Sign up
         </Button>
+        </Link>
       </div>
     </div>
   );

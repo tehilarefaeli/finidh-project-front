@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Input } from 'antd';
-import './Login.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';  // חיבור קובץ העיצוב
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // כאן ניתן לבדוק אם המשתמש כבר מחובר ולעבור ישירות לעמוד הפרופיל
+    // לדוג', בעזרת JWT או בדרך אחרת.
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,14 +24,18 @@ function Login() {
       });
 
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userId', response.data.userId);
-        window.location.href = '/account';
+        // בדיקות נוספות כמו בדיקה של הסיסמה וכדומה
+
+        // במקרה שהכניסה הוצלחה, נשאיר את ההבאה ל-useEffect
+        navigate('/profile');
       } else {
-        alert(response.data.message);
+        // טיפול בסטטוסים השונים של הבקשה
+        alert('The login failed.');
       }
     } catch (error) {
-      console.error(error);
+      // טיפול בשגיאות
+      console.error(error.response); // ידפיס את התגובה מהשרת
+      alert('An error occurred.');
     }
   };
 
@@ -72,8 +83,10 @@ function Login() {
           </div>
         </form>
         <p className="registration-link">
-          <span className="registration-text">  Not registered yet? </span>
-          <a href="http://localhost:3000/signup" className="registration-link">Click here to register  </a>
+          <span className="registration-text"> Not registered yet? </span>
+          <a href="http://localhost:3000/signup" className="registration-link">
+            Click here to register
+          </a>
         </p>
       </div>
     </div>
