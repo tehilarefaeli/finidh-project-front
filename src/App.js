@@ -18,6 +18,7 @@ import axios from "axios";
 
 
 
+
 function App() {
 
 const getFromBackEnd = async () => {
@@ -40,6 +41,7 @@ const getFromBackEnd = async () => {
         <Route path='/all' element={<All />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footers/>

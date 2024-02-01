@@ -3,41 +3,35 @@ import { Button, Input } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';  // חיבור קובץ העיצוב
+import PostRequest from '../helpers/postRequest'
+import GetRequest from '../helpers/getRequest';
+import { Link } from 'react-router-dom';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+   const [email, setEmail] = useState('');
+ const [password, setPassword] = useState('');
+   
+//  const [user,setuser] = useState();
 
-  useEffect(() => {
-    // כאן ניתן לבדוק אם המשתמש כבר מחובר ולעבור ישירות לעמוד הפרופיל
-    // לדוג', בעזרת JWT או בדרך אחרת.
-  }, []);
+  
+//     console.log("e",email)
+//    console.log("p",password)
+  
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
 
-    try {
-      const response = await axios.post('/api/login', {
-        email,
-        password
-      });
 
-      if (response.status === 200) {
-        // בדיקות נוספות כמו בדיקה של הסיסמה וכדומה
+//   useEffect(() => {
+//      GetRequest('/api/login', {
+//       email,
+//       password
+//     }).then(res => {
+//       console.log("user:" + res);
+//             setuser(res)
+//     }
+//     ).catch(e => console.log(e))
+    
+//   }, []);
 
-        // במקרה שהכניסה הוצלחה, נשאיר את ההבאה ל-useEffect
-        navigate('/profile');
-      } else {
-        // טיפול בסטטוסים השונים של הבקשה
-        alert('The login failed.');
-      }
-    } catch (error) {
-      // טיפול בשגיאות
-      console.error(error.response); // ידפיס את התגובה מהשרת
-      alert('An error occurred.');
-    }
-  };
 
   return (
     <div className="user-container">
@@ -78,7 +72,9 @@ function Login() {
           </div>
 
           <div className="button-container">
-            <Button onClick={handleLogin}>Login</Button>
+            <Link to ="/profile?email=${email}?password=${password}">
+            <Button>Login</Button>
+            </Link>
             <Button>Guest </Button>
           </div>
         </form>
