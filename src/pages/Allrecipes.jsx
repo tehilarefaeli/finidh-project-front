@@ -7,15 +7,7 @@ function AllRecipes() {
 
 
  const recipes = JSON.parse(localStorage.getItem('myRecipes')) 
-//  const [recipes,setrecipes] = useState();
-//   useEffect(()=>{
-//   GetRequest("recipes/all").then(res => {
-//   console.log("useEffect", res);
-//   setrecipes(res)
-// }
-// ).catch(e => console.log(e))
 
-//  },[]);
 
 
   return (
@@ -25,7 +17,9 @@ function AllRecipes() {
           return(
            <PictureCard 
             title={item?.recipe_name}
-            data={item?.recipe_img}
+            img={item?.recipe_img}
+            data ={item}
+            
            />)
         
       } )): (

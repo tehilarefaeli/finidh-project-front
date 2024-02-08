@@ -14,16 +14,11 @@ import Noingred from './pages/Noingredients';
 import Login from './pages/Login';
 import Footers from './components/common/Footers';
 import Signup from './pages/signup';
-import axios from "axios";
-
+import Recipe from './pages/recipe';
 
 
 function App() {
 
-const getFromBackEnd = async () => {
-  const response = await axios.get("http://localhost:3000");
-  return response.data;
-};
   return (
     
     <BrowserRouter>
@@ -38,6 +33,7 @@ const getFromBackEnd = async () => {
         <Route path='/Wantingredints' element={<Wantingred />} />
         <Route path='/Noingredints' element={<Noingred />} />
         <Route path='/all' element={<All />} />
+        <Route path='/recipe' element={<Recipe />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/signup' element={<Signup/>}/>
         <Route path='*' element={<NotFound />} />
