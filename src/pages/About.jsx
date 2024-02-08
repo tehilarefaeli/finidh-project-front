@@ -1,5 +1,4 @@
 import React from 'react';
-import MainLayout from '../components/layout/MainLayout';
 import BasicButton from '../components/basic/BasicButton';
 
 function About() {

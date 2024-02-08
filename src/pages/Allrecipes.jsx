@@ -4,19 +4,18 @@ import GetRequest from "../helpers/getRequest";
 import PictureCard from '../components/basic/pictureCard';
 
 function AllRecipes() {
-  const [recipes, setRecipes] = useState([]);
 
-function AllRecipres() {
- // const recipes = GetRequest("recipes/all")
- const [recipes,setrecipes] = useState();
-  useEffect(()=>{
-  GetRequest("recipes/all").then(res => {
-  console.log("useEffect", res);
-  setrecipes(res)
-}
-).catch(e => console.log(e))
 
- },[]);
+ const recipes = JSON.parse(localStorage.getItem('myRecipes')) 
+//  const [recipes,setrecipes] = useState();
+//   useEffect(()=>{
+//   GetRequest("recipes/all").then(res => {
+//   console.log("useEffect", res);
+//   setrecipes(res)
+// }
+// ).catch(e => console.log(e))
+
+//  },[]);
 
 
   return (
@@ -35,5 +34,5 @@ function AllRecipres() {
     </div>
   );
 }
-}
+
 export default AllRecipes;
