@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import './Allrecipes.css';
 import GetRequest from "../helpers/getRequest";
+import PictureCard from '../components/basic/pictureCard';
+
+function AllRecipes() {
 
 
-function AllRecipres() {
- // const recipes = GetRequest("recipes/all")
- const [recipes,setrecipes] = useState();
-  useEffect(()=>{
-  GetRequest("recipes/all").then(res => {
-  console.log("useEffect", res);
-  setrecipes(res)
-}
-).catch(e => console.log(e))
+ const recipes = JSON.parse(localStorage.getItem('myRecipes')) 
 
- },[]);
 
 
   return (
-    <div>
-      {recipes && recipes[0]?.recipe_name}
+    <div className = "allrecipes">  
+      {recipes.length > 0 ? (
+         Object.values(recipes).map((item) => {
+          return(
+           <PictureCard 
+            title={item?.recipe_name}
+            img={item?.recipe_img}
+            data ={item}
+            
+           />)
+        
+      } )): (
+        <p>Loading recipes...</p>
+      )}
     </div>
   );
 }
 
-export default AllRecipres;
+export default AllRecipes;

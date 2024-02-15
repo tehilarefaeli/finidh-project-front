@@ -1,15 +1,20 @@
 import React from 'react';
 import { Card, Space } from 'antd';
- import {HeartOutlined, HeartFilled } from '@ant-design/icons';
+import {HeartOutlined, HeartFilled } from '@ant-design/icons';
 import { useState } from 'react';
 
 function SimpleCard  ({title, size, data}) {
+
     const [isChose , setIsChose] = useState(false)
     return(
         <Space direction="vertical" size={16}>
         <Card
+
+
           title={title}
-          extra={
+          
+          
+            extra={
             <button  
             onClick={()=>{
                 console.log({isChose})
@@ -27,7 +32,9 @@ function SimpleCard  ({title, size, data}) {
             width: 300,
           }}
           size={size}
+          
         >
+           
           <p>{data}</p>
           {/* <p>Card content</p>
           <p>Card content</p> */}

@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import GetRequest from "../helpers/getRequest";
+
 
 
 function Homepage() {
+
+  useEffect(()=>{
+  GetRequest("recipes/all").then(res => {
+  console.log("useEffect", res);
+    localStorage.setItem('myRecipes',JSON.stringify(res) )
+}
+).catch(e => console.log(e))
+
+ },[]);
+
+
   return (
     <div
       style={{
