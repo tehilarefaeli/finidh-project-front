@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Image, List } from 'antd';
-import './recipe.css'
+//import './recipe.css'
 const { Header, Footer, Sider, Content } = Layout;
 function Recipe() {
     const data =  JSON.parse(localStorage.getItem('currentRecipe'));

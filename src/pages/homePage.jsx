@@ -66,15 +66,11 @@ function Homepage() {
 
         <Link to="/Wantingredints">
           <Button type="button" className="recipeButton">
-            Search by Ingredients
+          The perfect recipe for you
           </Button>
         </Link>
 
-        <Link to="/Noingredints">
-          <Button type="button" className="recipeButton">
-            Search Without Ingredients
-          </Button>
-        </Link>
+       
         <br /><br /><br />
         <Link to="/Login">
           <Button type="button" className="recipeButton">

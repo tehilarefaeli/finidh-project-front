@@ -10,12 +10,12 @@ import Deserts from './pages/Deserts';
 import Headers from './components/common/Headers';
 import Wantingred from './pages/Wantingredients';
 import All from './pages/Allrecipes';
-import Noingred from './pages/Noingredients';
+//import Noingred from './pages/Noingredients';
 import Login from './pages/Login';
 import Footers from './components/common/Footers';
 import Signup from './pages/signup';
 import Recipe from './pages/recipe';
-
+import FilterResult from './pages/FilterResult';
 
 function App() {
 
@@ -31,11 +31,12 @@ function App() {
         <Route path='/cookies' element={<Cookies />} />
         <Route path='/deserts' element={<Deserts />} />
         <Route path='/Wantingredints' element={<Wantingred />} />
-        <Route path='/Noingredints' element={<Noingred />} />
         <Route path='/all' element={<All />} />
         <Route path='/recipe' element={<Recipe />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/FilterResult' element={<FilterResult/>}/>
+
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footers/>
