@@ -2,7 +2,7 @@ import { Button, Result } from 'antd';
 import { Link } from 'react-router-dom';
 
 function NotFound() {
-  window.document.title = 'React App — Not Found';
+  window.document.title = 'Not Found';
 
   return (
     <div className='flex h-screen justify-center items-center'>

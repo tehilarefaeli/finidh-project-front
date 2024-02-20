@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 
 
 function Home() {
-  window.document.title = 'React App — Home';
+  window.document.title = 'Sweetime';
 
   return (
     <Layout>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button } from 'antd';
+import './BasicButton.css'
+
 
 function BasicButton({ type , text , isDisabled , isDanger, size, onClick}){
 
     return(
-        <Button
+        <Button className='button'
         type={type}
         disabled={isDisabled}
         danger={isDanger}
