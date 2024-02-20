@@ -9,7 +9,7 @@ const { Text } = Typography;
 
 function Footers() {
   const handleYoutubeClick = () => {
-    window.location.href = 'https://www.youtube.com/channel/UCAoBGRZ-vhFYCX-6nVJBJWQ';
+    window.open('https://www.youtube.com/channel/UCAoBGRZ-vhFYCX-6nVJBJWQ')
   };
   const handleInstagramClick = () => {
     window.open('https://www.instagram.com/p/C2Kiya2oWz8/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==', '_blank');

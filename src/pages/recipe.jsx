@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Image, List } from 'antd';
+import BasicButton from '../components/basic/BasicButton';
+import { useNavigate } from 'react-router-dom';
+
 //import './recipe.css'
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
+
 function Recipe() {
+  const navigate = useNavigate();
+
+const prevUrl = localStorage.getItem('previewUrl')
+  const handleClick = ()=>{
+    navigate(`/${prevUrl}`); 
+  }
     const data =  JSON.parse(localStorage.getItem('currentRecipe'));
-    console.log({data});
-    const products=  data.products.map(ingredient => ({ title: ingredient }));
     const inputString = data.recipe_prepare;
 const myObject = inputString.split('\n').map(line => {
   return { text: line.trim() };
 });
 const filterData = myObject.filter(obj => obj.text !== "")
+
+useEffect(()=>{
+  return () => {
+    localStorage.removeItem('previewUrl');
+  };
+},[])
   return (
     <div>
           <Layout >
@@ -19,7 +33,7 @@ const filterData = myObject.filter(obj => obj.text !== "")
         <Content >
             <div className='layout-recipe-page'>
             <div>
- <h5>Products</h5>
+ {/* <h5>Products</h5>
         <List
     itemLayout="horizontal"
     dataSource={products}
@@ -30,6 +44,10 @@ const filterData = myObject.filter(obj => obj.text !== "")
         />
       </List.Item>
     )}
+  /> */}
+  <BasicButton
+  text='back'
+  onClick={handleClick}
   />
 
   </div>

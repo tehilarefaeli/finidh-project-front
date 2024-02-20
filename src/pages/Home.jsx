@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 
 
 function Home() {
-  window.document.title = 'Sweetime';
+  //window.document.title = 'Sweetime';
 
   return (
     <Layout>
