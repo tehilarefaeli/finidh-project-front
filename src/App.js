@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import About from './pages/About'
+import About from './pages/About';
 import Cookies from './pages/Cookies';
 import Profile from './pages/Profile';
 import Cakes from './pages/Cakes';
@@ -18,11 +18,11 @@ import Recipe from './pages/recipe';
 import FilterResult from './pages/FilterResult';
 
 function App() {
+  const [user,setUser] = useState();
 
   return (
-    
     <BrowserRouter>
-    <Headers />
+      <Headers user={user}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -31,19 +31,17 @@ function App() {
         <Route path='/cookies' element={<Cookies />} />
         <Route path='/deserts' element={<Deserts />} />
         <Route path='/Wantingredints' element={<Wantingred />} />
-        <Route path='/all' element={<All />} />
+        <Route path='/all' element={<All user={user}/>} />
         <Route path='/recipe' element={<Recipe />} />
-        <Route path='/Login' element={<Login />} />
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/FilterResult' element={<FilterResult/>}/>
+        <Route path='/Login' element={<Login setUser={setUser}/>} />
+        <Route path='/signup' element={<Signup setUser={setUser}/>} />
+        <Route path='/FilterResult' element={<FilterResult />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <Footers/>
+      <Footers />
     </BrowserRouter>
-
   );
-
 }
 
 export default App;
