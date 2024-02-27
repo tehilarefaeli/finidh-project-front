@@ -8,15 +8,13 @@ import './pictureCard.css';
 import PostRequest from '../../helpers/postRequest';
 
 //add className and add div that will ger this class name
-function RecipeCard({ title, img, data,user }) {
+function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
   const navigate = useNavigate();
 
   const url = window.location.href;
   const parts = url.split('/');
   const lastWord = parts.pop();
-
-
-  const isLiked = false;
+  
 
   const handleClick = (currentData) => {
     localStorage.setItem('currentRecipe', JSON.stringify(currentData));
@@ -26,13 +24,19 @@ function RecipeCard({ title, img, data,user }) {
   };
 
   const handleLike = async()=>{
+    if(!user?.email){
+      return alert('You must be logged in to like recipes')
+    }
     try {
-      await PostRequest('', {
+      await PostRequest('recipes/likes', {
         type: isLiked ? 'unlike': 'like',
+        recipe_id: data.recipe_id,
         email: user.email
       })
+
+      getUserLikes(user.email)
     } catch (err){
-      
+      console.log(err)
     }
   }
 

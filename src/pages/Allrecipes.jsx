@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './Allrecipes.css';
-import GetRequest from "../helpers/getRequest";
+import GetRequest from '../helpers/getRequest';
 import RecipeCard from '../components/basic/RecipeCard';
 
-function AllRecipes({user}) {
-
-
- const recipes = JSON.parse(localStorage.getItem('myRecipes')) 
-
-
+function AllRecipes({ user, likes, getUserLikes,recipes }) {
 
   return (
-    <div className = "allrecipes">  
+    <div className='allrecipes'>
       {recipes.length > 0 ? (
-         Object.values(recipes).map((item) => {
-          return(
-           <RecipeCard 
-            title={item?.recipe_name}
-            img={item?.recipe_img}
-            data ={item}
-            user={user}
-           />)
-        
-      } )): (
+       (recipes).map((item) => {
+          const isLiked = likes.includes(item.recipe_id);
+          return <RecipeCard key={item.recipe_id} title={item?.recipe_name} img={item?.recipe_img} data={item} 
+          user={user} isLiked={isLiked} getUserLikes={getUserLikes}/>;
+        })
+      ) : (
         <p>Loading recipes...</p>
       )}
     </div>

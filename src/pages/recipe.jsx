@@ -9,77 +9,53 @@ const { Header, Sider, Content } = Layout;
 function Recipe() {
   const navigate = useNavigate();
 
-const prevUrl = localStorage.getItem('previewUrl')
-  const handleClick = ()=>{
-    navigate(`/${prevUrl}`); 
-  }
-    const data =  JSON.parse(localStorage.getItem('currentRecipe'));
-    const inputString = data.recipe_prepare;
-const myObject = inputString.split('\n').map(line => {
-  return { text: line.trim() };
-});
-const filterData = myObject.filter(obj => obj.text !== "")
-
-useEffect(()=>{
-  return () => {
-    localStorage.removeItem('previewUrl');
+  const prevUrl = localStorage.getItem('previewUrl');
+  const handleClick = () => {
+    navigate(`/${prevUrl}`);
   };
-},[])
+  const data = JSON.parse(localStorage.getItem('currentRecipe'));
+  const inputString = data.recipe_prepare;
+  const myObject = inputString.split('\n').map((line) => {
+    return { text: line.trim() };
+  });
+  const filterData = myObject.filter((obj) => obj.text !== '');
+
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem('previewUrl');
+    };
+  }, []);
   return (
     <div>
-          <Layout >
-      <Header >{data.recipe_name}</Header>
-      <Layout>
-        <Content >
+      <Layout style={{ flexDirection: 'column' }}>
+        <Header>{data.recipe_name}</Header>
+        <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Content>
             <div className='layout-recipe-page'>
-            <div>
- {/* <h5>Products</h5>
-        <List
-    itemLayout="horizontal"
-    dataSource={products}
-    renderItem={(item, index) => (
-      <List.Item>
-        <List.Item.Meta
-          title={item.title}
-        />
-      </List.Item>
-    )}
-  /> */}
-  <BasicButton
-  text='back'
-  onClick={handleClick}
-  />
-
-  </div>
-  <div>
-  <h5>Products</h5>
-        <List
-    itemLayout="horizontal"
-    dataSource={filterData}
-    renderItem={(item, index) => (
-      <List.Item>
-        <List.Item.Meta
-          title={item.text}
-        />
-      </List.Item>
-    )}
-    />
-  
-
-  </div>
-  </div>
-        </Content>
-        <Sider width="25%" >
-        <Image src={data.recipe_img}
-               alt={'pleas give me picture'}
-                width={300} height={200} 
-                onClick={()=>{
-                  handleClick(data) }}
-                />
-        </Sider>
+              <div>
+                <BasicButton text='back' onClick={handleClick} />
+              </div>
+              <div>
+                <h5>Products</h5>
+                {filterData.map((item) => {
+                 return <div>{item.text}</div>;
+                })}
+              </div>
+            </div>
+          </Content>
+          <Sider width='25%'>
+            <Image
+              src={data.recipe_img}
+              alt={'pleas give me picture'}
+              width={300}
+              height={200}
+              onClick={() => {
+                handleClick(data);
+              }}
+            />
+          </Sider>
+        </div>
       </Layout>
-    </Layout>
-
     </div>
   );
 }

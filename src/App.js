@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
@@ -16,9 +16,30 @@ import Footers from './components/common/Footers';
 import Signup from './pages/signup';
 import Recipe from './pages/recipe';
 import FilterResult from './pages/FilterResult';
+import GetRequest from './helpers/getRequest';
 
 function App() {
-  const [user,setUser] = useState();
+  const [user, setUser] = useState();
+  const [likes, setLikes] = useState([]);
+  const recipes = JSON.parse(localStorage.getItem('myRecipes'));
+
+  console.log({likes,recipes})
+  const likedRecipes = recipes.filter( recipe => likes.includes(recipe.recipe_id))
+
+  console.log(likes);
+
+  const getUserLikes = (email) =>{
+    GetRequest('recipes/likes/'+user.email).then(value =>{
+      setLikes(value)
+    })
+  }
+
+  useEffect(()=>{
+    if( user?.email){
+      getUserLikes(user.email)
+    }
+
+  },[user?.email])
 
   return (
     <BrowserRouter>
@@ -26,12 +47,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user}/>} />
         <Route path='/cakes' element={<Cakes />} />
         <Route path='/cookies' element={<Cookies />} />
         <Route path='/deserts' element={<Deserts />} />
         <Route path='/Wantingredints' element={<Wantingred />} />
-        <Route path='/all' element={<All user={user}/>} />
+        <Route path='/all' element={<All user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes}/>} />
         <Route path='/recipe' element={<Recipe />} />
         <Route path='/Login' element={<Login setUser={setUser}/>} />
         <Route path='/signup' element={<Signup setUser={setUser}/>} />
