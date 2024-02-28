@@ -1,3 +1,13 @@
+  .profile-name {
+  font-size: 24px; /* גודל הגופן */
+  font-weight: bold; /* משקל הגופן */
+  font-Family: "cursive"; /* סוג הגופן */
+  color: #714618; /* צבע הגופן */
+}
+.profile-name:hover {
+  color: rgb(184, 183, 93);
+}
+
   .home{
     margin-left: 70px;
     height: 25px;

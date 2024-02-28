@@ -16,7 +16,7 @@ function Headers({ user }) {
       <div className='profile'>
         <Link to='/profile'>
           <UserOutlined className='profileIcon' />
-          {user ? user.name :''}
+          <span className='profile-name'>{user ? user.name : ''}</span>
         </Link>
       </div>
 
