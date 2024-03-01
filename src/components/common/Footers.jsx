@@ -3,6 +3,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout, Typography } from 'antd';
 import React from 'react';
+//import './Footers.css';
 
 const { Footer } = Layout;
 const { Text } = Typography;
@@ -21,6 +22,7 @@ function Footers() {
   };
 
   return (
+    <div className='sticky-footer'>
     <Footer className='flex flex-col items-center md:flex-row px-2 md:px-12 lg:px-24 justify-center'>
       <div className='flex justify-center space-x-4 md:space-x-2 md:order-first'>
         <Button type='dashed' shape='circle' icon={<FacebookOutlined />} size='middle' onClick={handleFacebookClick}/>
@@ -32,6 +34,7 @@ function Footers() {
         <Text className='md:text-center'>{`All Rights Reserved©️ sweetime ${new Date().getFullYear()} `}</Text>
       </div>
     </Footer>
+    </div>
   );
 }
 

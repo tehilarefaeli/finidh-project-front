@@ -21,7 +21,7 @@ import GetRequest from './helpers/getRequest';
 function App() {
   const [user, setUser] = useState();
   const [likes, setLikes] = useState([]);
-  const recipes = JSON.parse(localStorage.getItem('myRecipes'));
+  const recipes = JSON.parse(localStorage.getItem('myRecipes')?? '[]');
 
   console.log({likes,recipes})
   const likedRecipes = recipes.filter( recipe => likes.includes(recipe.recipe_id))
