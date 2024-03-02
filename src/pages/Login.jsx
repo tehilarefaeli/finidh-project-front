@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Input } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // חיבור קובץ העיצוב
+import './Login.css'; 
 import PostRequest from '../helpers/postRequest';
 import GetRequest from '../helpers/getRequest';
 import { Link } from 'react-router-dom';
@@ -56,7 +56,6 @@ function Login({setUser}) {
             <Button type='submit' onClick={handleSubmit}>
               Login
             </Button>
-            <Button>Guest </Button>
           </div>
         </form>
         <p className='registration-link'>
