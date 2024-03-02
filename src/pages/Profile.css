@@ -3,7 +3,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Removed color property as it was overriding the user-defined color */
   text-align: center;
   padding: 20px;
   position: relative;
@@ -11,7 +10,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Added back the pseudo-element with opacity adjustment for better text visibility */
 
 .login-message::before {
   content: "";
@@ -20,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Changed opacity to 0.3 for better contrast */
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .login-message img {
@@ -34,7 +32,7 @@
   position: relative;
   z-index: 1;
   line-height: 1.2;
-  color: white; /* Added color white for better contrast */
+  color: white; 
 }
 
 .login-message p {
@@ -43,8 +41,7 @@
   position: relative;
   z-index: 1;
   line-height: 1.5;
-  color: white; /* Added color white for better contrast */
-}
+  color: white; }
 
 .login-message a {
   background-color: #f00;
@@ -67,8 +64,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: 20px auto;
-  max-width: 1400px; /* הגדרת רוחב מרבי של 1000px */
-  justify-content: center; /* מרכזת את התוכן בתוך ה-container */
+  max-width: 1400px; 
+  justify-content: center; 
 }
 
 
