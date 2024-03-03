@@ -46,6 +46,7 @@ function Headers({ user }) {
           </Link>
         </div>
 
+
         <div className='logout'>
           <Link to='/logout'>
             <span className='logout-text'>Sign Out</span>
