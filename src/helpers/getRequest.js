@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseURL } from "./constact";
+import { baseURL } from "./constants";
 
 export default async function GetRequest(url) {
 

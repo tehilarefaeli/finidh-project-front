@@ -1,15 +1,19 @@
 import React from 'react';
 import BasicButton from '../components/basic/BasicButton';
+import './About.css'; // Import the CSS file for styling
 
 function About() {
 
   return (
-    <div>
-      For desserts, our site is an advanced recipe site.
+    <div className="about-container">
+      <h3>Welcome to Our Recipe Site</h3>
+      <p>
+         For desserts, our site is an advanced recipe site.
 There are many recipe apps and websites on the market today, including
 of famous chefs
 We came up with a brilliant solution that will give users a different level of experience
 the site.
+<br/>
 When people enter the kitchen to prepare something, they often encounter
 In a frustrating situation of 'whoops, I don't have all the materials'
 Then either the grocery store is far away or it's late and here's a username
@@ -29,6 +33,8 @@ to the seeker
 And of course a personal area that will be the cache of all the recipes you liked
 We set a goal before our eyes to give our user an efficient browsing experience
 Effective and of course tasty
+      </p>
+      <BasicButton size='large' text='Learn More' />
     </div>
   );
 }
