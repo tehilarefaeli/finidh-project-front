@@ -34,7 +34,7 @@ const DropDown = () => {
           style={{
             width: '100%',
           }}
-          options={options.map(option => ({ label: option, value: option }))}
+          options={options?.map(option => ({ label: option, value: option }))}
         />
       </Space>
       </div>
