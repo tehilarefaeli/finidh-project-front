@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './Allrecipes.css';
-import GetRequest from '../helpers/getRequest';
-import RecipeCard from '../components/basic/RecipeCard';
+import GetRequest from "../helpers/getRequest";
+import PictureCard from '../components/basic/pictureCard';
+import AutoCompleteInput from '../components/basic/autoCompletInput'
 
 function AllRecipes({ user, likes, getUserLikes,recipes }) {
 
   return (
-    <div className='allrecipes'>
+    <div className = "allrecipes">  
+    <AutoCompleteInput
+    opt={recipes}
+    />
       {recipes.length > 0 ? (
        (recipes).map((item) => {
           const isLiked = likes.includes(item.recipe_id);
