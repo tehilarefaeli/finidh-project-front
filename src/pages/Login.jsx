@@ -30,6 +30,9 @@ function Login({setUser}) {
 
   return (
     <div className='user-container'>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+        SWEETIME
+      </h1>
       <div className='welcome-container'>
         <h1 className='welcome-header'>
           <center>

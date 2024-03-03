@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BasicButton from '../basic/BasicButton';
-import { HomeOutlined, UserOutlined, LineOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined, LineOutlined, LogoutOutlined } from '@ant-design/icons';
 import './Headers.css';
 
 function Headers({ user }) {
@@ -11,6 +11,7 @@ function Headers({ user }) {
   const handleChange = (e) => {
     console.log(e.target.value);
   };
+
   return (
     <div className='sticky-header'>
       <div className='divRoot'>
@@ -42,6 +43,13 @@ function Headers({ user }) {
           <LineOutlined rotate={90} />
           <Link to='/deserts'>
             <BasicButton size='large' text='Deserts' onClick={handleClick} />
+          </Link>
+        </div>
+
+        <div className='logout'>
+          <Link to='/logout'>
+            <span className='logout-text'>Sign Out</span>
+            <LogoutOutlined className='logoutIcon' />
           </Link>
         </div>
       </div>

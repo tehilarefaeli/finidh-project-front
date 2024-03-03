@@ -3,7 +3,7 @@ import { Layout, Image, List } from 'antd';
 import BasicButton from '../components/basic/BasicButton';
 import { useNavigate } from 'react-router-dom';
 
-import './recipe.css'
+import './recipe.css';
 
 const { Header, Sider, Content } = Layout;
 
@@ -11,11 +11,13 @@ function Recipe() {
   const navigate = useNavigate();
 
   const prevUrl = localStorage.getItem('previewUrl');
+
   const handleClick = () => {
-    navigate(`/${prevUrl}`);
+    navigate('/all');
   };
+
   const currentRecipe = JSON.parse(localStorage.getItem('currentRecipe'));
-  console.log(currentRecipe)
+  console.log(currentRecipe);
   const inputString = currentRecipe.recipe_prepare;
   const myObject = inputString.split('\n').map((line) => {
     return { text: line.trim() };
@@ -28,47 +30,49 @@ function Recipe() {
     };
   }, []);
 
-  
   return (
     <div>
       <Layout style={{ flexDirection: 'column' }}>
-        <Header >
-          <div className='recipe-name'>{currentRecipe.recipe_name}</div></Header>
+        <Header>
+          <div className='recipe-name'>{currentRecipe.recipe_name}</div>
+        </Header>
         <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Content>
             <div className='layout-recipe-page'>
-              <div>
-                <BasicButton text='back' onClick={handleClick} />
-              </div>
               <div className='content'>
                 <div>
-                  <h3 >Ingridients</h3>
+                  <h3>Ingridients:</h3>
 
-                  {currentRecipe.ingridients?.split(',').map((ingridient) => {
-                    return <div>{ingridient}</div>;
+                  {currentRecipe.ingridients?.split(',').map((ingredient) => {
+                    return <div>{ingredient}</div>;
                   })}
                 </div>
                 <div>
-                  <h3 >Preparation steps</h3>
+                  <h3>Preparation steps:</h3>
 
                   {filterData.map((item) => {
                     return <div className='preparation-step'>{item.text}</div>;
                   })}
                 </div>
               </div>
+
+              <Sider width='25%' style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <Image
+                  src={currentRecipe.recipe_img}
+                  alt={'Please give me a picture'}
+                  width={500}
+                  height={320}
+                  onClick={() => {
+                    handleClick(currentRecipe);
+                  }}
+                />
+              </Sider>
             </div>
           </Content>
-          <Sider width='25%'>
-            <Image
-              src={currentRecipe.recipe_img}
-              alt={'pleas give me picture'}
-              width={300}
-              height={200}
-              onClick={() => {
-                handleClick(currentRecipe);
-              }}
-            />
-          </Sider>
+          <br />
+          <div>
+            <BasicButton text='back' onClick={handleClick} />
+          </div>
         </div>
       </Layout>
     </div>

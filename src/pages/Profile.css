@@ -1,3 +1,17 @@
+.no-liked-recipes {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  font-size: 20px;
+  color: #070707;
+}
+
+.no-liked-recipes p {
+  margin-bottom: 10px;
+}
+
+
+
 .login-message {
   background-image: url("https://touchfood.co.il/wp-content/uploads/2019/04/%D7%A7%D7%99%D7%A0%D7%95%D7%97%D7%99%D7%9D-%D7%9C%D7%A4%D7%A1%D7%97-Medium.jpg");
   background-size: cover;

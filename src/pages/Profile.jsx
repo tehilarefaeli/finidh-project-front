@@ -2,6 +2,8 @@ import React from 'react';
 import SimpleCard from '../components/basic/card';
 import RecipeCard from '../components/basic/RecipeCard';
 import './Profile.css';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 function Profile({ likedRecipes, getUserLikes, user }) {
   console.log({ likedRecipes });
@@ -38,9 +40,40 @@ function Profile({ likedRecipes, getUserLikes, user }) {
             );
           })
         ) : (
-          <p>You didn't like any recipe yet</p>
+            <div className="no-liked-recipes">
+              <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+                SWEETIME
+              </h1>
+              <p>You don't have any recipes saved yet
+                <br></br> search the site for recipes for you </p>
+              <Link to="/all">
+                <Button type="button" className="recipeButton">
+                  All Recipes
+                </Button>
+              </Link>
+            </div>
         )}
       </div>
+      <style>
+          {`
+            .recipeButton {
+              width: 300px;
+              height: 50px;
+              text-align: center;
+              font-size: 20px;
+              background-color: rgb(184,183,93);
+              color: white;
+              border: none;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+            .recipeButton:hover {
+              background-color: rgb(238,236,183);
+            .recipeButton:hover {
+             color: black;
+            }
+          `}
+        </style>
     </>
   );
 }

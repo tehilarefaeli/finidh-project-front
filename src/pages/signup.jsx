@@ -31,6 +31,9 @@ function Signup({setUser}) {
 
   return (
     <div className='user-container'>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+        SWEETIME
+      </h1>
       <h1 className='welcome-header'>Enter the details for registration</h1>
       <br></br>
       <div className='login-container'>

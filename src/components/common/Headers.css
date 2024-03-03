@@ -49,3 +49,44 @@
   margin-bottom: 25px;
   color: #714618;
 }
+.logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout-text {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-right: 10px;
+  color: #714618;
+  font-Family: "cursive"; 
+  
+}
+
+.logout-text:hover {
+  color: rgb(184, 183, 93);
+}
+
+.logoutIcon {
+  font-size: 24px;
+  color: #714618;
+}
+
+.logoutIcon:hover {
+  color: rgb(184, 183, 93);
+}
+
+.logout:hover {
+  background-color: #f8f8f8f3;
+}
+
+
+.logout {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

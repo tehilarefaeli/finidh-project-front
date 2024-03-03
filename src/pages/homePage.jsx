@@ -28,7 +28,7 @@ function Homepage() {
         justifyContent: "flex-start",
         alignItems: "center",
         padding: "20px",
-        color: "#FF69B4", // ייתכן שתרצה לשנות צבע הכתב לפי הדרישות שלך
+        color: "#FF69B4", 
         textAlign: "center",
       }}
     >
@@ -36,7 +36,7 @@ function Homepage() {
         SWEETIME
       </h1>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
-        {/* נותן סגנון יותר נקי ואטרקטיבי לכפתורים */}
+        {}
         <style>
           {`
             .recipeButton {
