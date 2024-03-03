@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './Allrecipes.css';
 import GetRequest from "../helpers/getRequest";
-import PictureCard from '../components/basic/pictureCard';
 import AutoCompleteInput from '../components/basic/autoCompletInput'
+import RecipeCard from '../components/basic/RecipeCard';
+import './autoCompletInput.css'
+
 
 function AllRecipes({ user, likes, getUserLikes,recipes }) {
 
   return (
-    <div className = "allrecipes">  
+    <>
+     <div className='centered-input'>
     <AutoCompleteInput
     opt={recipes}
     />
+    </div>
+    <div className = "allrecipes">  
+    
       {recipes.length > 0 ? (
        (recipes).map((item) => {
           const isLiked = likes.includes(item.recipe_id);
@@ -21,6 +27,7 @@ function AllRecipes({ user, likes, getUserLikes,recipes }) {
         <p>Loading recipes...</p>
       )}
     </div>
+    </>
   );
 }
 

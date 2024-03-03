@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { AutoComplete } from 'antd';
+import { useNavigate } from 'react-router-dom';
+
 
 const { Option } = AutoComplete;
 
 const AutoCompleteInput = ({ opt }) => {
-  const [selectedOption, setSelectedOption] = useState(null); // Store selected option
   const [filteredOptions, setFilteredOptions] = useState([]);
+  const url = window.location.href;
+  const parts = url.split('/');
+  const lastWord = parts.pop();
+  const navigate = useNavigate();
 
   const handleSearch = (value) => {
     // Check if value is a string before applying toLowerCase
@@ -21,14 +26,17 @@ const AutoCompleteInput = ({ opt }) => {
 
   const handleSelect = (value) => {
     console.log({value});
-    const selectedItem = opt.find((item) => item.id === value); // Find selected item by ID
-    setSelectedOption(selectedItem); // Update selected option with both ID and recipe name
-    console.log("Selected option:", selectedItem); // Log the recipe name
+    console.log({opt});
+    const selectedItem = opt.find((item) => item.recipe_name == value); // Find selected item by ID
+    localStorage.setItem('currentRecipe', JSON.stringify(selectedItem));
+    localStorage.setItem('previewUrl', lastWord);
+    navigate('/recipe');
   };
 
   return (
+   
     <AutoComplete
-      style={{ width: 200 }}
+      style={{ width: 300 }}
       placeholder="Type to search"
       dataSource={filteredOptions}
       onChange={handleSearch}

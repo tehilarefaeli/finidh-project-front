@@ -1,9 +1,9 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { Card, Image, Col } from 'antd';
 import { Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import {HeartOutlined, HeartFilled } from '@ant-design/icons';
-
+import StarRating from './StarRating';
 import './pictureCard.css';
 import PostRequest from '../../helpers/postRequest';
 
@@ -14,11 +14,12 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
   const url = window.location.href;
   const parts = url.split('/');
   const lastWord = parts.pop();
+  const [userRating, setUserRating] = useState(0);
+
   
 
   const handleClick = (currentData) => {
     localStorage.setItem('currentRecipe', JSON.stringify(currentData));
-    console.log({ lastWord });
     localStorage.setItem('previewUrl', lastWord);
     navigate('/recipe');
   };
@@ -40,6 +41,25 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
     }
   }
 
+
+  const handleRatingChange = (newRating) => {
+    setUserRating(newRating);
+    const recipeId = data.recipe_id;
+  
+    // Send the rating to the server
+    PostRequest(`recipes/rating`,{
+      newRating : newRating,
+      recipeid : recipeId
+    })
+      .then((response) => {
+        if (response.status == 200) {
+          console.log('Rating updated successfully');
+        } else {
+          throw new Error('Failed to update rating');
+        }
+      })
+      .catch((error) => console.error('Error:', error.message)); 
+  };
   return (
     <div className='propeties'>
       <Card title={title} >
@@ -54,6 +74,10 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
         />
       </Card>
        {isLiked ? <HeartFilled onClick={handleLike} />:<HeartOutlined onClick={handleLike}/>}
+       <div  classNames ='startRating'>
+       <StarRating   onRate={handleRatingChange} />
+       </div>
+       <span>ROUTING : {data.recipe_rating}</span>
     </div>
   );
 }
