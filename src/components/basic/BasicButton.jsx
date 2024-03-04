@@ -3,10 +3,10 @@ import { Button } from 'antd';
 import './BasicButton.css'
 
 
-function BasicButton({ type , text , isDisabled , isDanger, size, onClick}){
+function BasicButton({ type , text , isDisabled , isDanger, size, onClick, className}){
 
     return(
-        <Button className='button'
+        <Button className={className ||'button'}
         type={type}
         disabled={isDisabled}
         danger={isDanger}

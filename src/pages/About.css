@@ -10,7 +10,9 @@ margin: 20px auto;
 .about-container h2 {
   color: #333;
 }
-
+.aboutHeader{
+  color: #714618;
+}
 .about-container p {
   margin-bottom: 10px;
 }

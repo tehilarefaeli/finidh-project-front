@@ -5,11 +5,11 @@ import './About.css';
 function About() {
   return (
     <div className="about-container">
-      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+      <h1 className='aboutHeader' style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive", color: "#714618"}}>
         SWEETIME
       </h1>
-      <h3>Welcome to Our Recipe Site</h3>
-      <p>
+      <h3 className='aboutHeader'>Welcome to Our Recipe Site</h3>
+      <p className='aboutHeader'>
         For desserts, our site is an advanced recipe site. There are many recipe apps and websites on the market today, including those of famous chefs.
         <br />
         We came up with a brilliant solution that will give users a different level of experience on the site.
@@ -30,7 +30,7 @@ function About() {
         <br />
         We set a goal before our eyes to give our user an efficient, effective, and of course, tasty browsing experience.
       </p>
-      <BasicButton size='large' text='Learn More' />
+      {/* <BasicButton size='large' text='Learn More' /> */}
     </div>
   );
 }

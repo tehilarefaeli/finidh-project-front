@@ -31,8 +31,12 @@
   font-size: 60px;
   color: #714618;
 }
-.homeIcon:hover,.profileIcon:hover{
+.homeIcon:hover,.profileIcon:hover  {
   color: rgb(184, 183, 93);
+}
+.link:hover{
+  color: rgb(184, 183, 93);
+ border :1px solid  rgb(184, 183, 93)
 }
 
 .divRoot{
@@ -49,6 +53,7 @@
   margin-bottom: 25px;
   color: #714618;
 }
+
 .logout {
   display: flex;
   align-items: center;

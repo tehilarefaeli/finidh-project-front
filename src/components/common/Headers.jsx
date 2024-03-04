@@ -30,19 +30,19 @@ function Headers({ user }) {
 
         <div className='linkes'>
           <Link to='/about'>
-            <BasicButton size='large' text='About' onClick={handleClick} />
+            <BasicButton className="link" size='large' text='About' onClick={handleClick} />
           </Link>
           <LineOutlined rotate={90} />
           <Link to='/cakes'>
-            <BasicButton size='large' text='Cakes' onClick={handleClick} />
+            <BasicButton className="link" size='large' text='Cakes' onClick={handleClick} />
           </Link>
           <LineOutlined rotate={90} />
           <Link to='/cookies'>
-            <BasicButton size='large' text='Cookies' onClick={handleClick} />
-          </Link>
+            <BasicButton className="link" size='large' text='Cookies' onClick={handleClick} />
+          </Link> 
           <LineOutlined rotate={90} />
           <Link to='/deserts'>
-            <BasicButton size='large' text='Deserts' onClick={handleClick} />
+            <BasicButton className="link" size='large' text='Deserts' onClick={handleClick} />
           </Link>
         </div>
 

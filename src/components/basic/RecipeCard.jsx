@@ -77,7 +77,7 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
        <div  classNames ='startRating'>
        <StarRating   onRate={handleRatingChange} />
        </div>
-       <span>ROUTING : {data.recipe_rating}</span>
+       <span>RATING : {data.recipe_rating}</span>
     </div>
   );
 }

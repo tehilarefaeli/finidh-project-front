@@ -32,7 +32,7 @@ function Homepage() {
         textAlign: "center",
       }}
     >
-      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive", color: "#714618" }}>
         SWEETIME
       </h1>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
