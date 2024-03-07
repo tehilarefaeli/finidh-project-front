@@ -28,24 +28,29 @@ function Headers({ user }) {
           </Link>
         </div>
 
-        <div className='linkes'>
-          <Link to='/about'>
-            <BasicButton className="link" size='large' text='About' onClick={handleClick} />
-          </Link>
-          <LineOutlined rotate={90} />
-          <Link to='/cakes'>
-            <BasicButton className="link" size='large' text='Cakes' onClick={handleClick} />
-          </Link>
-          <LineOutlined rotate={90} />
-          <Link to='/cookies'>
-            <BasicButton className="link" size='large' text='Cookies' onClick={handleClick} />
-          </Link> 
-          <LineOutlined rotate={90} />
-          <Link to='/deserts'>
-            <BasicButton className="link" size='large' text='Deserts' onClick={handleClick} />
-          </Link>
+        <div className='buttons-container'>
+          <div className='linkes'>
+            <Link to='/about' className='button-link'>
+              <BasicButton className="link" size='large' text='About' onClick={handleClick} />
+            </Link>
+            <LineOutlined rotate={90} />
+            <Link to='/all' className='button-link'>
+              <BasicButton className="link" size='large' text='all recipes' onClick={handleClick} />
+            </Link>
+            <LineOutlined rotate={90} />
+            <Link to='/cakes' className='button-link'>
+              <BasicButton className="link" size='large' text='Cakes' onClick={handleClick} />
+            </Link>
+            <LineOutlined rotate={90} />
+            <Link to='/cookies' className='button-link'>
+              <BasicButton className="link" size='large' text='Cookies' onClick={handleClick} />
+            </Link>
+            <LineOutlined rotate={90} />
+            <Link to='/deserts' className='button-link'>
+              <BasicButton className="link" size='large' text='Deserts' onClick={handleClick} />
+            </Link>
+          </div>
         </div>
-
 
         <div className='logout'>
           <Link to='/logout'>
@@ -59,3 +64,4 @@ function Headers({ user }) {
 }
 
 export default Headers;
+ 
