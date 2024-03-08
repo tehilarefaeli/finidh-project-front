@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BasicButton from '../basic/BasicButton';
 import { HomeOutlined, UserOutlined, LineOutlined, LogoutOutlined } from '@ant-design/icons';
 import './Headers.css';
 
-function Headers({ user }) {
+function Headers({ user, setUser }) {
+  const navigate = useNavigate()
   const handleClick = () => {
     console.log('click me');
   };
   const handleChange = (e) => {
     console.log(e.target.value);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser()
+    navigate('/')
+  }
 
   return (
     <div className='sticky-header'>
@@ -52,16 +59,15 @@ function Headers({ user }) {
           </div>
         </div>
 
-        <div className='logout'>
-          <Link to='/logout'>
+        {user ? <div className='logout'>
+          <Link onClick={handleLogout}>
             <span className='logout-text'>Sign Out</span>
             <LogoutOutlined className='logoutIcon' />
           </Link>
-        </div>
+        </div> : null}
       </div>
     </div>
   );
 }
 
 export default Headers;
- 

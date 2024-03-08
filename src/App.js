@@ -9,7 +9,7 @@ import Cakes from './pages/Cakes';
 import Deserts from './pages/Deserts';
 import Headers from './components/common/Headers';
 import Wantingred from './pages/Wantingredients';
-import All from './pages/Allrecipes';
+import Recipes from './pages/Recipes';
 //import Noingred from './pages/Noingredients';
 import Login from './pages/Login';
 import Footers from './components/common/Footers';
@@ -47,18 +47,21 @@ function App() {
     }
   }, [user?.email]);
 
+  console.log({recipes})
+
+  const cakesRecipes = recipes.filter(item => item.category_id == 2);
   return (
-    <BrowserRouter>
-      <Headers user={user} />
+    <>
+      <Headers user={user} setUser={setUser} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user} />} />
-        <Route path='/cakes' element={<Cakes />} />
+        <Route path='/cakes' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={cakesRecipes} />} />
         <Route path='/cookies' element={<Cookies />} />
         <Route path='/deserts' element={<Deserts />} />
         <Route path='/Wantingredints' element={<Wantingred />} />
-        <Route path='/all' element={<All user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes} />} />
+        <Route path='/all' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes} />} />
         <Route path='/recipe' element={<Recipe />} />
         <Route path='/Login' element={<Login setUser={setUser} />} />
         <Route path='/signup' element={<Signup setUser={setUser} />} />
@@ -67,7 +70,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footers />
-    </BrowserRouter>
+    </>
   );
 }
 

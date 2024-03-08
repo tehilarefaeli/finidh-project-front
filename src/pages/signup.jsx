@@ -13,6 +13,12 @@ function Signup({setUser}) {
 
   const handleRegistration = async () => {
     console.log(`נרשמת עם שם משתמש: ${email}, סיסמא: ${password}, שם כינוי: ${name}, גיל: ${age}`);
+
+    // a@a.c
+    if (!email.includes('@') || !email.includes('.') || email.length < 5){
+      return alert('Please insert a valid email')
+    }
+    
     const body = {
       name,
       age,
@@ -25,6 +31,10 @@ function Signup({setUser}) {
       navigate('/');
       setUser(body)
     } catch (err) {
+      console.log(err)
+      if (err.message.includes('Duplicate entry')){
+       return alert('Email already exists')
+      }
       alert(err.message);
     }
   };

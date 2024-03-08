@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './Allrecipes.css';
+import './Recipes.css';
 import GetRequest from "../helpers/getRequest";
 import AutoCompleteInput from '../components/basic/autoCompletInput'
 import RecipeCard from '../components/basic/RecipeCard';
 import './autoCompletInput.css'
 
 
-function AllRecipes({ user, likes, getUserLikes, recipes }) {
+function Recipes({ user, likes, getUserLikes, recipes }) {
 
   return (
     <>
@@ -31,4 +31,4 @@ function AllRecipes({ user, likes, getUserLikes, recipes }) {
   );
 }
 
-export default AllRecipes;
+export default Recipes;

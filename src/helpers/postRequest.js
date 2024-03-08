@@ -9,6 +9,6 @@ export default async function PostRequest(url, body) {
         const response = await axios.post(`${baseURL}${url}`, body);
         return response.data; // Return the response data
     } catch (error) {
-        throw new Error(error.response.data); // Throw an error with the response data
+        throw new Error(error.response.data?.message ?? error.response.data); // Throw an error with the response data
     }
 }

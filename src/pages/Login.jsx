@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, Input } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; 
+import './Login.css';
 import PostRequest from '../helpers/postRequest';
 import GetRequest from '../helpers/getRequest';
 import { Link } from 'react-router-dom';
 
-function Login({setUser}) {
+function Login({ setUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -18,11 +18,12 @@ function Login({setUser}) {
     console.log(data);
     try {
       const responseData = await PostRequest('users/login', data);
+      console.log(responseData)
 
       if (responseData.name) {
         navigate('/');
         setUser(responseData)
-        localStorage.setItem('user',JSON.stringify(responseData))
+        localStorage.setItem('user', JSON.stringify(responseData))
       }
     } catch (err) {
       alert(err.message);
