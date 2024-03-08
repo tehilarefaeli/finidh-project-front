@@ -50,6 +50,8 @@ function App() {
   console.log({recipes})
 
   const cakesRecipes = recipes.filter(item => item.category_id == 2);
+  const cookiesRecipes = recipes.filter(item => item.category_id == 1);
+  const desertsRecipes = recipes.filter(item => item.category_id == 3);
   return (
     <>
       <Headers user={user} setUser={setUser} />
@@ -58,8 +60,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user} />} />
         <Route path='/cakes' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={cakesRecipes} />} />
-        <Route path='/cookies' element={<Cookies />} />
-        <Route path='/deserts' element={<Deserts />} />
+        <Route path='/cookies' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={cookiesRecipes}/>} />
+        <Route path='/deserts' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={desertsRecipes}/>} />
         <Route path='/Wantingredints' element={<Wantingred />} />
         <Route path='/all' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes} />} />
         <Route path='/recipe' element={<Recipe />} />
