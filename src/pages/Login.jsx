@@ -22,6 +22,7 @@ function Login({setUser}) {
       if (responseData.name) {
         navigate('/');
         setUser(responseData)
+        localStorage.setItem('user',JSON.stringify(responseData))
       }
     } catch (err) {
       alert(err.message);

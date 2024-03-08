@@ -21,41 +21,47 @@ import GetRequest from './helpers/getRequest';
 function App() {
   const [user, setUser] = useState();
   const [likes, setLikes] = useState([]);
-  const recipes = JSON.parse(localStorage.getItem('myRecipes')?? '[]');
+  const recipes = JSON.parse(localStorage.getItem('myRecipes') ?? '[]');
 
-  console.log({likes,recipes})
-  const likedRecipes = recipes.filter( recipe => likes.includes(recipe.recipe_id))
+  useEffect(() => {
+    const localUserData = localStorage.getItem('user');
+    if (localUserData) {
+      setUser(JSON.parse(localUserData));
+    }
+  }, []);
+
+  console.log({ likes, recipes });
+  const likedRecipes = recipes.filter((recipe) => likes.includes(recipe.recipe_id));
 
   console.log(likes);
 
-  const getUserLikes = (email) =>{
-    GetRequest('recipes/likes/'+user.email).then(value =>{
-      setLikes(value)
-    })
-  }
+  const getUserLikes = (email) => {
+    GetRequest('recipes/likes/' + user.email).then((value) => {
+      setLikes(value);
+    });
+  };
 
-  useEffect(()=>{
-    if( user?.email){
-      getUserLikes(user.email)
+  useEffect(() => {
+    if (user?.email) {
+      getUserLikes(user.email);
     }
-
-  },[user?.email])
+  }, [user?.email]);
 
   return (
     <BrowserRouter>
-      <Headers user={user}/>
+      <Headers user={user} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user}/>} />
+        <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user} />} />
         <Route path='/cakes' element={<Cakes />} />
         <Route path='/cookies' element={<Cookies />} />
         <Route path='/deserts' element={<Deserts />} />
         <Route path='/Wantingredints' element={<Wantingred />} />
-        <Route path='/all' element={<All user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes}/>} />
+        <Route path='/all' element={<All user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes} />} />
         <Route path='/recipe' element={<Recipe />} />
-        <Route path='/Login' element={<Login setUser={setUser}/>} />
-        <Route path='/signup' element={<Signup setUser={setUser}/>} />
+        <Route path='/Login' element={<Login setUser={setUser} />} />
+        <Route path='/signup' element={<Signup setUser={setUser} />} />
         <Route path='/FilterResult' element={<FilterResult />} />
 
         <Route path='*' element={<NotFound />} />
