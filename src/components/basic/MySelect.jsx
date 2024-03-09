@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { SettingOutlined} from '@ant-design/icons';
+import '../common/Headers.css'
 
 const { Option } = Select;
 

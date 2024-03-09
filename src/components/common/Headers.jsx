@@ -14,6 +14,7 @@ function Headers({ user, setUser }) {
     console.log(e.target.value);
   };
 
+
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser()
@@ -36,8 +37,8 @@ function Headers({ user, setUser }) {
           </Link>
         </div>
 
-        <button className='managerButton' disabled ={user&&user.isAdmin==1? false : true}>
-         <div className="manager">
+        <button className='managerSettingsIcon' disabled ={user&&user.isAdmin==1? false : true}>
+         <div>
           <MySelect/>
            </div>
         </button>
