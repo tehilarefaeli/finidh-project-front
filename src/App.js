@@ -52,11 +52,9 @@ function App() {
 
   console.log({recipes})
 
-<<<<<<< Updated upstream
   const cakesRecipes = recipes.filter(item => item.category_id == 2);
   const cookiesRecipes = recipes.filter(item => item.category_id == 1);
   const desertsRecipes = recipes.filter(item => item.category_id == 3);
-=======
   useEffect(()=>{
     if( user?.isAdmin){
       getUserLikes(user.isAdmin)
@@ -64,7 +62,6 @@ function App() {
 
   },[user?.isAdmin])
 
->>>>>>> Stashed changes
   return (
     <>
       <Headers user={user} setUser={setUser} />
