@@ -17,6 +17,9 @@ import Signup from './pages/signup';
 import Recipe from './pages/recipe';
 import FilterResult from './pages/FilterResult';
 import GetRequest from './helpers/getRequest';
+import AddRecipe from './pages/AddRecipe';
+import DeleteRecipe from './pages/DeleteRecipe';
+import UpdateRecipe from './pages/UpdateRecipe';
 
 function App() {
   const [user, setUser] = useState();
@@ -49,9 +52,19 @@ function App() {
 
   console.log({recipes})
 
+<<<<<<< Updated upstream
   const cakesRecipes = recipes.filter(item => item.category_id == 2);
   const cookiesRecipes = recipes.filter(item => item.category_id == 1);
   const desertsRecipes = recipes.filter(item => item.category_id == 3);
+=======
+  useEffect(()=>{
+    if( user?.isAdmin){
+      getUserLikes(user.isAdmin)
+    }
+
+  },[user?.isAdmin])
+
+>>>>>>> Stashed changes
   return (
     <>
       <Headers user={user} setUser={setUser} />
@@ -68,6 +81,9 @@ function App() {
         <Route path='/Login' element={<Login setUser={setUser} />} />
         <Route path='/signup' element={<Signup setUser={setUser} />} />
         <Route path='/FilterResult' element={<FilterResult />} />
+        <Route path="/addRecipe" element ={<AddRecipe/>}/>
+        <Route path="/deleteRecipe" element ={<DeleteRecipe/>} />
+        <Route path="/updateRecipe" element ={<UpdateRecipe/>} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>
