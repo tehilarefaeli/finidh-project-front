@@ -37,11 +37,22 @@
   width: 25px;
   margin-top: 8px;
 }
-.homeIcon,.profileIcon{
+.manager{
+  margin-left: 75px;
+  height: 24px;
+  width: 24px;
+  margin-top: 14px;
+}
+.managerButton{
+  height: 1px;
+  width: 1px;
+}
+.homeIcon,.profileIcon , .managerSettingsIcon{
   font-size: 60px;
   color: #714618;
 }
-.homeIcon:hover,.profileIcon:hover  {
+.homeIcon:hover,.profileIcon:hover ,.managerSettingsIcon:hover{
+
   color: rgb(184, 183, 93);
 }
 .link:hover{

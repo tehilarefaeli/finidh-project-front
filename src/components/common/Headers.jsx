@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import BasicButton from '../basic/BasicButton';
 import { HomeOutlined, UserOutlined, LineOutlined, LogoutOutlined } from '@ant-design/icons';
 import './Headers.css';
+import MySelect from '../basic/MySelect';
 
 function Headers({ user, setUser }) {
   const navigate = useNavigate()
@@ -34,6 +35,13 @@ function Headers({ user, setUser }) {
             <HomeOutlined className='homeIcon' />
           </Link>
         </div>
+
+        <button className='managerButton' disabled ={user&&user.isAdmin==1? false : true}>
+         <div className="manager">
+          <MySelect/>
+           </div>
+        </button>
+        
 
         <div className='buttons-container'>
           <div className='linkes'>
