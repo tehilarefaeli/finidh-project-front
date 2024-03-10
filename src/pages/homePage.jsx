@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import GetRequest from "../helpers/getRequest";
 
 
-function Homepage() {
+function Homepage({user, setUser}) {
 
   useEffect(()=>{
   GetRequest("recipes/all").then(res => {
@@ -72,7 +72,9 @@ function Homepage() {
 
        
         <br /><br /><br />
-        <Link to="/Login">
+        {
+          !user?.email ? <>
+ <Link to="/Login">
           <Button type="button" className="recipeButton">
             Login
           </Button>
@@ -82,6 +84,16 @@ function Homepage() {
           Sign up
         </Button>
         </Link>
+          </>
+: <div>
+  <Button type="button" className="recipeButton" onClick={()=>{
+    localStorage.removeItem('user')
+    setUser(null)
+  }}>
+            logout
+          </Button>
+</div>        }
+       
       </div>
     </div>
   );

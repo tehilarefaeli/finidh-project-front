@@ -27,6 +27,7 @@
   font-weight: 500;
   /* הוספת מרווח בין השורות */
   line-height: 1.5;
+  color: "#714618"
 }
 
 
@@ -38,6 +39,10 @@
 .password-input {
     margin-bottom: 10px;
 }
+.lable-color{
+    color: "#714618"
+}
+
 
 .button-container {
     display: grid;
@@ -53,6 +58,7 @@
 .registration-text {
     margin-right: 5px;
     font-size: 1em;
+    color: "#714618"
 }
 
 .registration-link a {

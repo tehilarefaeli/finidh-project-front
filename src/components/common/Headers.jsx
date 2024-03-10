@@ -4,6 +4,10 @@ import BasicButton from '../basic/BasicButton';
 import { HomeOutlined, UserOutlined, LineOutlined, LogoutOutlined } from '@ant-design/icons';
 import './Headers.css';
 import MySelect from '../basic/MySelect';
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
+
+const { Header, Content, Footer } = Layout;
+
 
 function Headers({ user, setUser }) {
   const navigate = useNavigate()
@@ -45,35 +49,43 @@ function Headers({ user, setUser }) {
         
 
         <div className='buttons-container'>
-          <div className='linkes'>
+        <Header style={{ display: 'flex', alignItems: 'center', background:'none' }}>
+          <div>
             <Link to='/about' className='button-link'>
               <BasicButton className="link" size='large' text='About' onClick={handleClick} />
             </Link>
+            </div>
             <LineOutlined rotate={90} />
+            <div>
             <Link to='/all' className='button-link'>
-              <BasicButton className="link" size='large' text='all recipes' onClick={handleClick} />
+              <BasicButton className="link" size='large' text='All recipes' onClick={handleClick} />
             </Link>
+            </div>
             <LineOutlined rotate={90} />
+            <div>
             <Link to='/cakes' className='button-link'>
               <BasicButton className="link" size='large' text='Cakes' onClick={handleClick} />
             </Link>
+            </div>
             <LineOutlined rotate={90} />
+            <div>
             <Link to='/cookies' className='button-link'>
               <BasicButton className="link" size='large' text='Cookies' onClick={handleClick} />
-            </Link>
+            </Link></div>
             <LineOutlined rotate={90} />
+            <div>
             <Link to='/deserts' className='button-link'>
               <BasicButton className="link" size='large' text='Deserts' onClick={handleClick} />
-            </Link>
-          </div>
+            </Link></div>
+            </Header>
         </div>
-
+{/* 
         {user ? <div className='logout'>
           <Link onClick={handleLogout}>
             <span className='logout-text'>Sign Out</span>
             <LogoutOutlined className='logoutIcon' />
           </Link>
-        </div> : null}
+        </div> : null} */}
       </div>
     </div>
   );

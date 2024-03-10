@@ -39,24 +39,24 @@ function Signup({ setUser }) {
 
   return (
     <div className='user-container'>
-      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive", color: "#714618" }}>
         SWEETIME
       </h1>
-      <h1 className='welcome-header'>Enter the details for registration</h1>
+      <h1 className='welcome-header'style={{color: "#714618"}}>Enter the details for registration</h1>
       <br></br>
       <div className='login-container'>
         <form id='user-form'>
           <div className='label-input-container'>
-            <label htmlFor='email'>Email </label>
+            <label htmlFor='email' style={{color: "#714618"}}>Email </label>
             <Input type='email' id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
 
           <div className='label-input-container'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password' style={{color: "#714618"}}>Password</label>
             <Input type='password' id='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <div className='label-input-container'>
-            <label htmlFor='nickname'>Nickname </label>
+            <label htmlFor='nickname' style={{color: "#714618"}}>Nickname </label>
             <Input type='text' id='nickname' name='nickname' value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
          

@@ -32,12 +32,12 @@ function Login({ setUser }) {
 
   return (
     <div className='user-container'>
-      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+      <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive", color: "#714618" }}>
         SWEETIME
       </h1>
       <div className='welcome-container'>
         <h1 className='welcome-header'>
-          <center>
+          <center style={{color: "#714618"}}>
             Welcome back!
             <br />
             you should register to enjoy the site's recipes
@@ -48,12 +48,12 @@ function Login({ setUser }) {
       <div className='login-container'>
         <form id='user-form' onSubmit={handleSubmit}>
           <div className='label-input-container'>
-            <label htmlFor='username'> Email </label>
+            <label style={{color: "#714618"}} htmlFor='username'> Email </label>
             <Input type='text' id='username' name='username' value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
 
           <div className='label-input-container password-input'>
-            <label htmlFor='password'>Password</label>
+            <label style={{color: "#714618"}} htmlFor='password'>Password</label>
             <Input type='password' id='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
 
@@ -64,8 +64,8 @@ function Login({ setUser }) {
           </div>
         </form>
         <p className='registration-link'>
-          <span className='registration-text'> Not registered yet? </span>
-          <a href='http://localhost:3000/signup' className='registration-link'>
+          <span className='registration-text' style={{color: "#714618"}}> Not registered yet? </span>
+          <a style={{color: "#714618"}} href='http://localhost:3000/signup' className='registration-link'>
             Click here to register
           </a>
         </p>
