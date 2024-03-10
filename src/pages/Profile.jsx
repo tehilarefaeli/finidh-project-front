@@ -40,22 +40,22 @@ function Profile({ likedRecipes, getUserLikes, user }) {
             );
           })
         ) : (
-            <div className="no-liked-recipes">
-              <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
-                SWEETIME
-              </h1>
-              <p>You don't have any recipes saved yet
-                <br></br> search the site for recipes for you </p>
-              <Link to="/all">
-                <Button type="button" className="recipeButton">
-                  All Recipes
-                </Button>
-              </Link>
-            </div>
+          <div className="no-liked-recipes">
+            <h1 style={{ marginBottom: "20px", fontSize: "6rem", fontWeight: "bold", fontFamily: "cursive" }}>
+              SWEETIME
+            </h1>
+            <p>You don't have any recipes saved yet
+              <br></br> search the site for recipes for you </p>
+            <Link to="/all">
+              <Button type="button" className="recipeButton">
+                All Recipes
+              </Button>
+            </Link>
+          </div>
         )}
       </div>
       <style>
-          {`
+        {`
             .recipeButton {
               width: 300px;
               height: 50px;
@@ -73,7 +73,7 @@ function Profile({ likedRecipes, getUserLikes, user }) {
              color: black;
             }
           `}
-        </style>
+      </style>
     </>
   );
 }

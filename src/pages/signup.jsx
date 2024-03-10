@@ -4,24 +4,22 @@ import './Signup.css';
 import PostRequest from '../helpers/postRequest';
 import { useNavigate } from 'react-router-dom';
 
-function Signup({setUser}) {
+function Signup({ setUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [age, setAge] = useState('');
   const navigate = useNavigate();
 
   const handleRegistration = async () => {
-    console.log(`נרשמת עם שם משתמש: ${email}, סיסמא: ${password}, שם כינוי: ${name}, גיל: ${age}`);
+    console.log(`נרשמת עם שם משתמש: ${email}, סיסמא: ${password}, שם כינוי: ${name}`);
 
     // a@a.c
-    if (!email.includes('@') || !email.includes('.') || email.length < 5){
+    if (!email.includes('@') || !email.includes('.') || email.length < 5) {
       return alert('Please insert a valid email')
     }
-    
+
     const body = {
       name,
-      age,
       email,
       password,
     };
@@ -32,8 +30,8 @@ function Signup({setUser}) {
       setUser(body)
     } catch (err) {
       console.log(err)
-      if (err.message.includes('Duplicate entry')){
-       return alert('Email already exists')
+      if (err.message.includes('Duplicate entry')) {
+        return alert('Email already exists')
       }
       alert(err.message);
     }
@@ -61,10 +59,7 @@ function Signup({setUser}) {
             <label htmlFor='nickname'>Nickname </label>
             <Input type='text' id='nickname' name='nickname' value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
-          <div className='label-input-container'>
-            <label htmlFor='age'>Age</label>
-            <Input type='number' id='age' name='age' value={age} onChange={(e) => setAge(e.target.value)} required />
-          </div>
+         
           <br></br>
 
           <div className='button-container'>
