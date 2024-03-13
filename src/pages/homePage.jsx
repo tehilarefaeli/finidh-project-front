@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import GetRequest from "../helpers/getRequest";
 
 
-function Homepage({user, setUser}) {
+function Homepage({user, setUser ,setRecipes}) {
 
-  useEffect(()=>{
-  GetRequest("recipes/all").then(res => {
-  console.log("useEffect", res);
-    localStorage.setItem('myRecipes',JSON.stringify(res) )
-}
-).catch(e => console.log(e))
+//   useEffect(()=>{
+//   GetRequest("recipes/all").then(res => {
+//     localStorage.setItem('myRecipes',JSON.stringify(res) )
+//     setRecipes(res);
+// }
+// ).catch(e => console.log(e))
 
- },[]);
+//  },[]);
 
 
   return (

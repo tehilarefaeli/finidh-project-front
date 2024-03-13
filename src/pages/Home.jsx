@@ -3,14 +3,16 @@ import Homepage from '../pages/homePage';
 import { Layout } from 'antd';
 
 
-function Home({user, setUser}) {
+function Home({user, setUser ,setRecipes}) {
   //window.document.title = 'Sweetime';
 
   return (
     <Layout>
     <Homepage
     user={user}
-    setUser={setUser}/>
+    setUser={setUser}
+    setRecipes={setRecipes}
+    />
     </Layout>
    
   );

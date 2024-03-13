@@ -62,7 +62,7 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
   };
   return (
     <div className='propeties'>
-      <Card title={title} >
+      <Card  title={title} >
         <Image
           src={img}
           alt={'pleas give me picture'}
@@ -77,7 +77,7 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
        <div  classNames ='startRating'>
        <StarRating   onRate={handleRatingChange} />
        </div>
-       <span>RATING : {data.recipe_rating}</span>
+       <span style={{ color:'#714618'}}>RATING : {data.recipe_rating}</span>
     </div>
   );
 }

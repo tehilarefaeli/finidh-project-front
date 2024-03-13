@@ -32,23 +32,23 @@ function Recipe() {
 
   return (
     <div>
-      <Layout style={{ flexDirection: 'column' }}>
-        <Header>
-          <div className='recipe-name'>{currentRecipe.recipe_name}</div>
+      <Layout style={{ flexDirection: 'column'  }}>
+        <Header style={{backgroundColor: 'rgb(184, 183, 93)'}}> 
+          <div className='recipe-name' >{currentRecipe.recipe_name}</div>
         </Header>
         <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Content>
             <div className='layout-recipe-page'>
               <div className='content'>
-                <div>
+                {/* <div>
                   <h3>Ingridients:</h3>
 
                   {currentRecipe.ingridients?.split(',').map((ingredient) => {
                     return <div>{ingredient}</div>;
                   })}
-                </div>
+                </div> */}
                 <div>
-                  <h3>Preparation steps:</h3>
+                  <h3 style={{ color: '#714618'}}>recipe:</h3>
 
                   {filterData.map((item) => {
                     return <div className='preparation-step'>{item.text}</div>;
@@ -56,7 +56,7 @@ function Recipe() {
                 </div>
               </div>
 
-              <Sider width='25%' style={{ display: 'flex', alignItems: 'flex-start' }}>
+              <Sider width='25%' style={{ display: 'flex', alignItems: 'flex-start', backgroundColor:'white' }}>
                 <Image
                   src={currentRecipe.recipe_img}
                   alt={'Please give me a picture'}
