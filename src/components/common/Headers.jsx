@@ -42,9 +42,7 @@ function Headers({ user, setUser }) {
         </div>
 
         <button className='managerSettingsIcon' disabled ={user&&user.isAdmin==1? false : true}>
-         <div>
-          <MySelect/>
-           </div>
+          <MySelect className='mySelectOptions'/>
         </button>
         
 

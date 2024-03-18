@@ -77,7 +77,7 @@ function App() {
         <Route path='/recipe' element={<Recipe />} />
         <Route path='/Login' element={<Login setUser={setUser} />} />
         <Route path='/signup' element={<Signup setUser={setUser} />} />
-        <Route path='/FilterResult' element={<FilterResult />} />
+        <Route path='/FilterResult' element={<FilterResult user={user} likes={likes} getUserLikes={getUserLikes} recipes={recipes} />} />
         <Route path="/addRecipe" element ={<AddRecipe/>}/>
         <Route path="/deleteRecipe" element ={<DeleteRecipe/>} />
         <Route path="/updateRecipe" element ={<UpdateRecipe/>} />

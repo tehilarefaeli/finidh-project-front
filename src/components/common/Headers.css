@@ -2,12 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 8%;
 }
-
+.mySelectOptions {
+  margin-top: 80%;
+}
 .button-link {
   margin: 0 10px;
 }
-
 
 .sticky-header {
   position: sticky;
@@ -16,56 +18,59 @@
   background-color: #f8f8f8f3;
 }
 .profile-name {
-  font-size: 24px; 
-  font-weight: bold; 
-  font-Family: "cursive"; 
-  color: #714618; 
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'cursive';
+  color: #714618;
 }
 .profile-name:hover {
   color: rgb(184, 183, 93);
 }
 
-.home{
+.home {
   margin-left: 70px;
   height: 25px;
   width: 25px;
   margin-top: 10px;
 }
-.profile{
+.profile {
   margin-left: 30px;
   height: 25px;
   width: 25px;
   margin-top: 8px;
 }
-.managerSettingsIcon{
+.managerSettingsIcon {
   margin-left: 35px;
   margin-top: 6px;
 }
-.manager{
+.manager {
   margin-left: 75px;
   height: 24px;
   width: 24px;
   margin-top: 14px;
 }
-.homeIcon,.profileIcon , .managerSettingsIcon{
+.homeIcon,
+.profileIcon,
+.managerSettingsIcon {
   font-size: 60px;
   color: #714618;
 }
-.homeIcon:hover,.profileIcon:hover ,.managerSettingsIcon:hover{
-
+.homeIcon:hover,
+.profileIcon:hover,
+.managerSettingsIcon:hover {
   color: rgb(184, 183, 93);
 }
-.link:hover{
+.link:hover {
   color: rgb(184, 183, 93);
- border :1px solid  rgb(184, 183, 93)
+  border: 1px solid rgb(184, 183, 93);
 }
 
-.divRoot{
+.divRoot {
   display: flex;
   height: 20%;
 }
 
-.linkes{
+.linkes {
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -82,12 +87,11 @@
 }
 
 .logout-text {
-  font-size: 24px; 
+  font-size: 24px;
   font-weight: bold;
   margin-right: 10px;
   color: #714618;
-  font-Family: "cursive"; 
-  
+  font-family: 'cursive';
 }
 
 .logout-text:hover {
@@ -106,7 +110,6 @@
 .logout:hover {
   background-color: #f8f8f8f3;
 }
-
 
 .logout {
   position: absolute;

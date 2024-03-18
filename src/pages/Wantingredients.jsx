@@ -51,15 +51,16 @@ function Wantingred() {
    
   return (
       <div>
-        <div>
-          <p>i want</p>
+        <div className='IngredientsDiv'>
+          <p className='dropDown'>Ingredients that you want: </p>
          <DropDown onChange={handleDropDown1Change} />
-         <p>i dont want</p>
+         <p className='dropDown'>Ingredients that you dont want: </p>
          <DropDown onChange={handleDropDown2Change} />
         </div>
   
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>            <Button type="button" className="rButton"  onClick={checkDuplicate}>
-              We will find for you the winner recipt!
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>         
+           <Button type="button" className="rButton"  onClick={checkDuplicate}>
+              Find your winner recipes!
             </Button>
         </div>
       </div>
