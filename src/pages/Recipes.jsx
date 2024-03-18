@@ -6,7 +6,19 @@ import RecipeCard from '../components/basic/RecipeCard';
 import './autoCompletInput.css'
 
 
-function Recipes({ user, likes, getUserLikes, recipes }) {
+function Recipes({ user, likes, getUserLikes, recipes,setRecipes }) {
+
+
+
+  useEffect(()=>{
+    GetRequest("recipes/all").then(res => {
+      localStorage.setItem('myRecipes',JSON.stringify(res) )
+      setRecipes(res);
+  }
+  ).catch(e => console.log(e))
+  
+   },[]);
+
 
   return (
     <>
