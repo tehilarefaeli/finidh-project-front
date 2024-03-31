@@ -1,43 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PostRequest from '../helpers/postRequest';
 import BasicInput from '../components/basic/BasicInput';
 import BasicButton from '../components/basic/BasicButton'
 
 import './AddRecipe.css'
+
 function AddRecipe() {
   const [recipeData, setRecipeData] = useState({
     category_id: '',
     recipe_name: '',
-    recipe_rating:0,
+    recipe_rating: 0,
     recipe_prepare: '',
-    rating_count:0,
+    rating_count: 0,
     recipe_img: ''
-  
-});
+  });
+
+  const [message, setMessage] = useState(''); // הוספת State עבור הודעת ההתראה
 
   const handleChange = (event) => {
-    console.log({event});
     const { name, value } = event.target;
-    console.log("name",name);
-    console.log("value",value);
     setRecipeData({
       ...recipeData,
       [name]: value
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Perform post request with recipeData
-    PostRequest('recipes/addrecipe', recipeData); // Example endpoint, replace with your API endpoint
+
+    try {
+      const success = await PostRequest('recipes/addrecipe', recipeData); // Await for result
+      setMessage(success ? 'המתכון הוסף בהצלחה!' : 'לא הצלחנו להוסיף את המתכון.');
+    } catch (error) {
+      console.error(error); // Log any errors
+      setMessage('אירעה שגיאה בעת הוספת המתכון.');
+    }
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setMessage(''), 3000); // הסרת ההתראה לאחר 3 שניות
+    return () => clearTimeout(timeout);
+  }, [message]);
 
   return (
     <div>
-      <h2>Add New Recipe</h2>
+      <h2 className='title'>Add New Recipe</h2>
       <form onSubmit={handleSubmit}>
       <div className='add-style'>
-          <label htmlFor="category_id">Category ID:</label>
+          <label htmlFor="category_id">Category ID:</label><br/>
           <input
             type="text"
             className='add-input'
@@ -48,7 +58,7 @@ function AddRecipe() {
           />
         </div>
         <div className='add-style'>
-          <label htmlFor="recipe_name">Recipe Name:</label>
+          <label htmlFor="recipe_name">Recipe Name:</label><br/>
           <input
             className='add-input'
             type="text"
@@ -59,8 +69,9 @@ function AddRecipe() {
           />
         </div>
         <div>
-          <label htmlFor="recipe_prepare">Recipe Preparation:</label>
+          <label htmlFor="recipe_prepare">Recipe Preparation:</label><br/>
           <textarea
+            className='add-input'
           //  id="recipe_prepare"
             name="recipe_prepare"
           //  value={recipeData.recipe_prepare}
@@ -68,7 +79,7 @@ function AddRecipe() {
           />
         </div>
         <div className='add-style'>
-          <label htmlFor="recipe_img">Recipe Image URL:</label>
+          <label htmlFor="recipe_img">Recipe Image URL:</label><br/>
           <input
             className='add-input'
             type="text"
@@ -78,7 +89,8 @@ function AddRecipe() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className='submitButton' type="submit">Submit</button>
+        {message && <p>{message}</p>}
       </form>
     </div>
   );
