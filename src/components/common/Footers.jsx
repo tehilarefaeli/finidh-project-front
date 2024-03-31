@@ -3,7 +3,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout, Typography } from 'antd';
 import React from 'react';
-//import './Footers.css';
+import './Footers.css';
 
 const { Footer } = Layout;
 const { Text } = Typography;

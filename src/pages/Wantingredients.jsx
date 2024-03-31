@@ -60,7 +60,7 @@ function Wantingred() {
   
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>         
            <Button type="button" className="rButton"  onClick={checkDuplicate}>
-              Find your winner recipes!
+              Search
             </Button>
         </div>
       </div>
