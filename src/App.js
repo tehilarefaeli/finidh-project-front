@@ -66,7 +66,7 @@ function App() {
     <>
       <Headers user={user} setUser={setUser} />
       <Routes>
-        <Route path='/' element={<Home setRecipes={setRecipes} />} />
+        <Route path='/' element={<Home  user={user} setUser={setUser} setRecipes={setRecipes} />} />
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile likedRecipes={likedRecipes} getUserLikes={getUserLikes} user={user} />} />
         <Route path='/cakes' element={<Recipes user={user} likes={likes} getUserLikes={getUserLikes} recipes={cakesRecipes} setRecipes={setRecipes} />} />
