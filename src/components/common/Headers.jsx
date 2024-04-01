@@ -40,7 +40,7 @@ function Headers({ user, setUser }) {
           </Link>
         </div>
 
-        <div className='managerSettingsIcon' disabled={isAdmin ? false : true}>
+        <div className='managerSettingsIcon' hidden={isAdmin ? false : true}>
           <MySelect className='mySelectOptions' />
         </div>
 
