@@ -10,31 +10,27 @@ function About() {
       </h1>
       <h3 className='aboutHeader'>Welcome to Our Recipe Site</h3>
       <p className='aboutHeader'>
-        For desserts, our site is an advanced recipe site.
-        There are many recipe apps and websites on the market today, including
-        of famous chefs
-        We came up with a brilliant solution that will give users a different level of experience
-        the site.
-        <br />
-        When people enter the kitchen to prepare something, they often encounter
-        In a frustrating situation of 'whoops, I don't have all the materials'
-        Then either the grocery store is far away or it's late and here's a username
-        The site abandons the recipe with a bitter taste in its mouth
-        And a mother of an allergic child who builds on some irritating recipe and in the end finds out that it is
-        Contains a component that is dangerous for the girl
-        Our site enters exactly this niche and offers a solution:
-        First of all let us know what your available supplies are/are not
-        are relevant - and according to this we will give you the recipes that suit you.
-        No more surfing and flipping through dozens of irrelevant recipes and feeling hungry
-        pinching From today you receive only relevant and practical recipes!
-        In addition, we offer the user to receive an indication of the rating of the recipe,
-        When a user sees a high rating it gives him confidence and certainty about
-        Choosing the recipe
-        There will be additional filter options in order to make the adjustment of the recipe more accurate
-        to the seeker
-        And of course a personal area that will be the cache of all the recipes you liked
-        We set a goal before our eyes to give our user an efficient browsing experience
-        Effective and of course tasty
+      Desserts. Our site is an advanced recipe site<br/>
+
+Nowadays you can find many apps and websites for recipes including those of well known chefs.<br/>
+
+We came up with a solution that will give our website users a high level experience.<br/>
+
+When people enter the kitchen to prepare something, they may find themselves in a frustrating situation as they discover that they are missing Ingredients.
+It can happen late at night or if the supermarket is not within walking distance, and they will give up on making the recipe with disappointment.<br/>
+
+Our site offers a super solution to this specific problem:<br/>
+
+The user selects his available grocery list/ unavailable groceries - and the site will offer him recipes according to his choice.<br/>
+
+No more surfing and searching through dozens of irrelevant recipes with hunger pains.. from today You will get only relevant and practical recipes.
+In addition, the website offers a rating for each recipe, when a user meets a
+highly rated recipe it will give him confidence and certainty that he is choosing the best for him.<br/>
+
+The site offers a personal area where you can save all your favorite recipes.<br/>
+
+We aim to give our users an efficient and effective browsing experience
+And of course, a delicious one.
       </p>
       {/* <BasicButton size='large' text='Learn More' /> */}
     </div>
