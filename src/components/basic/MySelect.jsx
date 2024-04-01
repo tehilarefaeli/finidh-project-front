@@ -29,7 +29,7 @@ const MySelect = () => {
 
   return (
     <div class='settings'>
-      <SettingOutlined className='managerSettingsIcon' onClick={() => setVisible(!visible)} />
+      <SettingOutlined className='managerSettingsIcon' onClick={() => setVisible(visible)} />
       <Select defaultValue='Select an option' style={{ width: 200, visibility: visible ? 'initial' : 'hidden' }} onChange={handleChange}>
         <Option value='addRecipe'>Add new recipe</Option>
         <Option value='updateRecipe'>Update recipe</Option>
