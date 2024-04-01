@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { SettingOutlined} from '@ant-design/icons';
-import '../common/Headers.css'
+import { SettingOutlined } from '@ant-design/icons';
+import '../common/Headers.css';
 
 const { Option } = Select;
 
@@ -28,22 +28,13 @@ const MySelect = () => {
   };
 
   return (
-    <div>
-      <SettingOutlined
-        className='managerSettingsIcon'
-        onClick={() => setVisible(!visible)}
-      />
-      {visible && (
-        <Select
-          defaultValue="Select an option"
-          style={{ width: 200 }}
-          onChange={handleChange}
-        >
-          <Option value="addRecipe">Add new recipe</Option>
-          <Option value="updateRecipe">Update recipe</Option>
-          <Option value="deleteRecipe">Delete recipe</Option>
-        </Select>
-      )}
+    <div class='settings'>
+      <SettingOutlined className='managerSettingsIcon' onClick={() => setVisible(!visible)} />
+      <Select defaultValue='Select an option' style={{ width: 200, visibility: visible ? 'initial' : 'hidden' }} onChange={handleChange}>
+        <Option value='addRecipe'>Add new recipe</Option>
+        <Option value='updateRecipe'>Update recipe</Option>
+        <Option value='deleteRecipe'>Delete recipe</Option>
+      </Select>
     </div>
   );
 };
