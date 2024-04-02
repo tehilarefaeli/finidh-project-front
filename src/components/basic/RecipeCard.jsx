@@ -78,6 +78,8 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
        <StarRating   onRate={handleRatingChange} />
        </div>
        <span style={{ color:'#714618'}}>RATING : {data.recipe_rating}</span>
+       <br/>
+       <span style={{ color:'#714618'}}>YOUR RATING : {userRating}</span>
     </div>
   );
 }
