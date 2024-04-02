@@ -16,7 +16,7 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
   const lastWord = parts.pop();
   const [userRating, setUserRating] = useState(0);
 
-  
+  const isAdmin = user && user.isAdmin == 1;
 
   const handleClick = (currentData) => {
     localStorage.setItem('currentRecipe', JSON.stringify(currentData));
@@ -74,12 +74,21 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
         />
       </Card>
        {isLiked ? <HeartFilled onClick={handleLike} />:<HeartOutlined onClick={handleLike}/>}
+
+      
        <div  classNames ='startRating'>
-       <StarRating   onRate={handleRatingChange} />
+
+       {
+          !isAdmin &&    <StarRating   onRate={handleRatingChange} />
+       }
+    
        </div>
        <span style={{ color:'#714618'}}>RATING : {data.recipe_rating}</span>
        <br/>
-       <span style={{ color:'#714618'}}>YOUR RATING : {userRating}</span>
+       {
+        !isAdmin    &&   <span style={{ color:'#714618'}}>YOUR RATING : {userRating}</span>
+
+       }
     </div>
   );
 }
