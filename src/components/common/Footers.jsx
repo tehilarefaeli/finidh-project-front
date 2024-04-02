@@ -23,7 +23,7 @@ function Footers() {
 
   return (
     <div className='sticky-footer'>
-    <Footer className='flex flex-col items-center md:flex-row px-2 md:px-12 lg:px-24 justify-center'>
+    <footer className='flex flex-col items-center justify-center'>
       <div className='flex justify-center space-x-4 md:space-x-2 md:order-first'>
         <Button type='dashed' shape='circle' icon={<FacebookOutlined />} size='middle' onClick={handleFacebookClick}/>
         <Button type='dashed' shape='circle' icon={<InstagramOutlined />} size='middle' onClick={handleInstagramClick} />
@@ -33,7 +33,7 @@ function Footers() {
       <div className='mb-4 md:mb-0'>
         <Text className='md:text-center'>{`All Rights Reserved©️ sweetime ${new Date().getFullYear()} `}</Text>
       </div>
-    </Footer>
+    </footer>
     </div>
   );
 }

@@ -22,6 +22,8 @@
   font-weight: bold;
   font-family: 'cursive';
   color: #714618;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 .profile-name:hover {
   color: rgb(184, 183, 93);

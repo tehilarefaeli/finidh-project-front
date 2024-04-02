@@ -28,11 +28,13 @@ function Headers({ user, setUser }) {
     <div className='sticky-header'>
       <div className='divRoot'>
         <div className='profile'>
+          
           <Link to='/profile'>
             <UserOutlined className='profileIcon' />
-            <span className='profile-name'>{user ? user.name : ''}</span>
+            
           </Link>
         </div>
+        <div className='profile-name'>{user ? user.name : ''}</div>
 
         <div className='home'>
           <Link to='/'>

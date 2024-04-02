@@ -36,7 +36,11 @@ function Recipe() {
         <Header style={{backgroundColor: 'rgb(184, 183, 93)'}}> 
           <div className='recipe-name' >{currentRecipe.recipe_name}</div>
         </Header>
+        <div>
+            <BasicButton text='back' onClick={handleClick} />
+          </div>
         <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+       
           <Content>
             <div className='layout-recipe-page'>
               <div className='content'>
@@ -70,9 +74,7 @@ function Recipe() {
             </div>
           </Content>
           <br />
-          <div>
-            <BasicButton text='back' onClick={handleClick} />
-          </div>
+         
         </div>
       </Layout>
     </div>

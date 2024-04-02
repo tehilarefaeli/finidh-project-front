@@ -73,7 +73,8 @@ function RecipeCard({ title, img, data,user, isLiked,getUserLikes }) {
           }}
         />
       </Card>
-       {isLiked ? <HeartFilled onClick={handleLike} />:<HeartOutlined onClick={handleLike}/>}
+      {
+        !isAdmin  && ( isLiked ? <HeartFilled onClick={handleLike} />:<HeartOutlined onClick={handleLike}/>)} 
 
       
        <div  classNames ='startRating'>
